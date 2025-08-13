@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Samrades</title>
+  <style>
+    :root {
+      --primary-color: #0d47a1;
+      --accent-color: #ffca28;
+      --bg-color: #f4f6f8;
+      --text-color: #000000;
+      --white: #fff;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      margin: 10px;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--primary-color);
+      color: var(--white);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: var(--white);
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    main {
+      padding: 3rem 1rem;
+      max-width: 1500px;
+      margin: auto;
+    }
+
+    .section {
+      background-color: var(--white);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section h2 {
+      color: var(--primary-color);
+      border-left: 5px solid var(--accent-color);
+      padding-left: 0.8rem;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+
+    .section p {
+      font-size: 1.05rem;
+    }
+
+    footer {
+      text-align: center;
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 1.2rem;
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 1rem;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+
+      .section h2 {
+        font-size: 1.4rem;
+      }
+
+      .section p {
+        font-size: 1rem;
+      }
+    }
+    .founder-image {
+    width: 1500px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Samrades</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#vision">Vision</a>
+      <a href="#mission">Mission</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <h2>About Us</h2>
+      <p>
+        At <strong>Samrades</strong>, we are a Thanjavur-based IT company dedicated to empowering businesses through
+        innovative digital solutions. Our core services include <strong>website development</strong>,
+        <strong>custom software development</strong>, <strong>secure hosting solutions</strong>,
+        <strong>IT infrastructure services</strong>, and expert <strong>IT consulting</strong> tailored to your business
+        needs. With a strong focus on quality, scalability, and user experience, we deliver technology that drives
+        growth and builds digital resilience.
+      </p>
+      <p>
+        Founded by a passionate technology enthusiast with a vision to bridge the gap between local businesses and
+        cutting-edge IT solutions, <strong>Samrades</strong> combines technical expertise with personalized service.
+        Our team is committed to delivering reliable, future-ready solutions that help our clients stay ahead in a
+        rapidly evolving digital world.
+      </p>
+    </section>
+
+    <section id="founder" class="section founder-section">
+        <div class="founder-container">
+          <div class="founder-content">
+            <h2>Our Founder</h2>
+            <p>
+              <strong>Samrades</strong> was founded by a visionary entrepreneur from Thanjavur with a passion for bridging the gap between local businesses and world-class digital solutions. With a strong technical background and deep understanding of market challenges, our founder envisioned a future where even the smallest enterprise could access scalable and secure IT services tailored to their needs.
+            </p>
+            <p>
+              With years of experience in software development, system architecture, and consulting, our founder has laid the foundation for a company that values innovation, simplicity, and long-term client relationships. Their leadership is marked by a commitment to ethical technology, user-centered design, and empowering local talent to create globally relevant solutions.
+            </p>
+            <p>
+              Beyond business, our founder is a mentor, a community advocate, and a firm believer in lifelong learning — inspiring the Samrades team to continuously grow, innovate, and serve with purpose.
+            </p>
+          </div>
+        </div>
+      </section>
+      
+    <section id="vision" class="section">
+      <h2>Our Vision</h2>
+      <p>
+        At <strong>Samrades</strong>, our vision is to become a trusted digital transformation partner for businesses across all industries, starting from local roots and reaching a global impact. We aim to empower enterprises with innovative, scalable, and secure IT solutions that not only solve today’s challenges but also prepare them for the future. By combining technology with insight, we envision a digitally inclusive future where every business, regardless of size, can thrive with the right tools and support.
+      </p>
+    </section>
+
+    <section id="mission" class="section">
+      <h2>Our Mission</h2>
+      <p>
+        Our mission at <strong>Samrades</strong> is to deliver tailored, high-quality technology solutions that drive measurable business value. We are committed to simplifying complex IT challenges through website development, custom software, secure hosting, and infrastructure services — all while ensuring a user-focused experience. With a foundation of trust, innovation, and local engagement, we strive to help businesses build resilience, scale confidently, and adapt quickly in a fast-paced digital era.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Samrades. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Reveal sections on scroll
+    const sections = document.querySelectorAll(".section");
+
+    function revealOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop < triggerBottom) {
+          section.classList.add("show");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
+</body>
+</html>
