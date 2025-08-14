@@ -253,13 +253,66 @@
       padding-top: 20px;
       font-size: 14px;
     }
+
+    /* Hamburger Icon (Hidden by default) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+/* Mobile Nav - Hidden by default */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  #nav-menu {
+    display: none;
+    width: 100%;
+  }
+
+  #nav-menu.open {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav ul li a {
+    padding: 12px 20px;
+    border-bottom: 1px solid #333;
+  }
+}
+
   </style>
 </head>
 <body>
 
   <header>
     <div class="logo">Samrades</div>
-    <nav>
+  
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  
+    <nav id="nav-menu">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -270,6 +323,7 @@
       </ul>
     </nav>
   </header>
+  
 
   <section id="about">
     <h2>About Us</h2>
@@ -379,6 +433,14 @@
       <p>&copy; 2025 Samrades. All rights reserved.</p>
     </div>
   </footer>
-
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+  
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+  </script>
+  
 </body>
 </html>
