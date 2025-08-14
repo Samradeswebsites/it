@@ -4,603 +4,381 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Samrades</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* Reset & Base styles */
+    /* Reset & Base */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: white;
       line-height: 1.6;
-      background-color: #ffffff;
     }
 
-    /* Header styles */
+    /* Header */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background-color: #ffffff;
+      background-color: #1c1c1c;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      border-bottom: 1px solid #e0e0e0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      transition: background 0.3s ease;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .logo {
-      font-size: 26px;
+      font-size: 24px;
+      color: #fff;
       font-weight: bold;
-      color: #222;
     }
 
     nav ul {
       display: flex;
       list-style: none;
-      gap: 30px;
+      gap: 25px;
     }
 
     nav ul li a {
       text-decoration: none;
-      color: #444;
-      font-weight: 500;
-      transition: color 0.3s ease;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      transition: 0.3s;
     }
 
     nav ul li a:hover {
-      color: #000;
+      background-color: #444;
     }
 
-    /* Hamburger styles */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
+    nav ul li a.active {
+      background-color: #bf7b2b;
     }
 
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background-color: #333;
-      transition: all 0.3s ease;
+    /* About Section */
+    #about {
+      background-color: #000000;
+      padding: 60px 20px;
+      text-align: center;
     }
 
-    /* Responsive styles */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
-
-      nav {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        background-color: #ffffff;
-        display: none;
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      nav ul li {
-        text-align: center;
-      }
+    #about h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
     }
 
-/* About Section */
-#about {
-  padding: 50px 40px;
-  color: #ffdb0f;
-}
+    #about p {
+      font-size: 20px;
+      max-width: 900px;
+      margin: 0 auto 20px;
+      color: #ddd;
+    }
 
-.about-container {
-  max-width: 1400px;
-  margin:5  0px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
-}
+    /* Know More Button */
+    .know-more-button {
+      display: inline-block;
+      background-color: #bf7b2b;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
 
-#about h2 {
-  font-size: 36px;
-  margin-bottom: 25px;
-  color: #000000;
-  padding-left: 15px;
-  text-align: center;
-}
+    .know-more-button:hover {
+      background-color: #a46820;
+    }
 
-#about p {
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  color: #000000;
-  font-size: 24px;
-  text-align: center;
-}
+    /* Services */
+    #services {
+      background-color: #000000;
+      padding: 60px 20px;
+    }
 
-/* Animation when section is visible */
-.about-container.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+    #services h2 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #ffffffd7
+;
+    }
 
-/* Services Section */
-#services {
-  padding: 20px 10px;
-  background-color: #ffffff;
-  background-image: url("5.jpg");
-}
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
 
-.services-container {
-  max-width: 1500px;
-  margin: 20px;
-  text-align: center;
-}
+    .service-card {
+      background-color: #2a2a2a;
+      padding: 40px;
+      border-radius: 20px;
+      transition: 0.3s;
+      text-align: center;
+    }
 
-#services h2 {
-  font-size: 36px;
-  color: #ffffff;
-  margin-bottom: 50px;
-  padding-left: 10px;
-  text-align: left;
-  text-align: center;
-}
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
 
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
-}
+    .service-card h3 {
+      color: #ffdb0f;
+      margin-bottom: 10px;
+    }
 
-.service-card {
-  background-color: #ffffff;
-  padding: 20px 10px;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  transform: translateY(30px);
-}
+    .service-card p {
+      color: #ccc;
+    }
 
-.service-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+    /* Process Section */
+    #process {
+      background: #141414;
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
+    #process h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
 
+    #process .subtitle {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 40px;
+    }
 
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
 
-.service-card h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #ffffff;
-  background-image: url("5.jpg");
-  padding: 50px;
+    .step {
+      background: #222;
+      border: 1px solid #333;
+      padding:30px;
+      border-radius: 20px;
+    }
 
-}
+    .step h3 {
+      color: #ffdb0f;
+      margin-bottom: 10px;
+    }
 
-.service-card p {
-  font-size: 16px;
-  color: #000000;
-}
+    .step p {
+      color: #ccc;
+    }
 
-/* Process Section */
-#process {
-  padding: 80px 20px;
-  background-color: #f4faff;
-  text-align: center;
-}
+    /* Call to Action */
+    #cta {
+      background-color: #000000;
+      padding: 80px 20px;
+      text-align: center;
+    }
 
-.process-container {
-  max-width: 1400px;
-  margin: auto;
-  padding: 80px 40px;
-}
+    #cta h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
 
-#process h2 {
-  font-size: 36px;
-  color: #222;
-  margin-bottom: 10px;
-}
+    #cta p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
 
-#process .subtitle {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 40px;
-}
+    .cta-button {
+      background: #bf7b2b;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 50px;
-}
+    /* Footer */
+    footer {
+      background-color: #111;
+      padding: 60px 20px;
+      color: #999;
+    }
 
-.step {
-  background-color: #ffffff;
-  border-radius: 10px;
-  border-style: solid;
-  padding: 25px 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-.step:hover {
-  transform: translateY(-5px);
-}
+    .footer-col h3,
+    .footer-col h4 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
 
-.step .icon {
-  font-size: 36px;
-  color: #007acc;
-  margin-bottom: 10px;
-}
+    .footer-col p,
+    .footer-col a {
+      font-size: 15px;
+      color: #aaa;
+      text-decoration: none;
+    }
 
-.step h3 {
-  font-size: 20px;
-  color: #222;
-  margin-bottom: 10px;
-}
+    .footer-col a:hover {
+      color: #fff;
+    }
 
-.step p {
-  font-size: 15px;
-  color: #555;
-  line-height: 1.6;
-}
+    .social-icons a {
+      color: #ccc;
+      margin-right: 10px;
+      font-size: 20px;
+    }
 
-/* CTA Section */
-#cta {
-  padding: 80px 20px;
-  background-image: url("5.jpg");
-  color: #ffffff;
-  text-align: center;
-}
+    .social-icons a:hover {
+      color: white;
+    }
 
-.cta-container {
-  max-width: 800px;
-  margin: auto;
-}
-
-#cta h2 {
-  font-size: 32px;
-  margin-bottom: 15px;
-}
-
-#cta p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  color: #ffffff;
-}
-
-.cta-button {
-  padding: 14px 32px;
-  background-color: #ffffff;
-  color: #007acc;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #f0f0f0;
-  color: #005a99;
-}
-
-  /* Footer Section */
-  footer {
-  background-color: #222;
-  color: #ccc;
-  padding: 60px 20px 30px;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.footer-col h3,
-.footer-col h4 {
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.footer-col p,
-.footer-col a {
-  font-size: 15px;
-  color: #ccc;
-  line-height: 1.6;
-  text-decoration: none;
-}
-
-.footer-col a:hover {
-  color: #ffffff;
-}
-
-.social-icons a {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 18px;
-  color: #ccc;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #fff;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid #444;
-  font-size: 14px;
-  color: #888;
-}
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #444;
+      padding-top: 20px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="logo">Samrades</div>
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav id="nav">
+    <nav>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Experiences</a></li>
-        <li><a href="#">Career</a></li>
-        <li><a href="contact.html">Contacts</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="experience.html">Experiences</a></li>
+        <li><a href="career.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <br>
-  <!-- About Section -->
   <section id="about">
-    <div class="about-container">
-      <h2>About Us</h2>
-      <p>
-        At <strong>Samrades</strong>, we are a Thanjavur-based IT company dedicated to empowering businesses through
-        innovative digital solutions. Our core services include <strong>website development</strong>,
-        <strong>custom software development</strong>, <strong>secure hosting solutions</strong>,
-        <strong>IT infrastructure services</strong>, and expert <strong>IT consulting</strong> tailored to your business
-        needs. With a strong focus on quality, scalability, and user experience, we deliver technology that drives
-        growth and builds digital resilience.
-      </p>
-      <p>
-        Founded by a passionate technology enthusiast with a vision to bridge the gap between local businesses and
-        cutting-edge IT solutions, <strong>Samrades</strong> combines technical expertise with personalized service.
-        Our team is committed to delivering reliable, future-ready solutions that help our clients stay ahead in a
-        rapidly evolving digital world.
-      </p>
-    </div>
+    <h2>About Us</h2>
+    <p>
+      At <strong>Samrades</strong>, we are a Thanjavur-based IT company dedicated to empowering businesses through
+      innovative digital solutions. Our core services include <strong>website development</strong>,
+      <strong>custom software development</strong>, <strong>secure hosting solutions</strong>,
+      <strong>IT infrastructure services</strong>, and expert <strong>IT consulting</strong> tailored to your business
+      needs. With a strong focus on quality, scalability, and user experience, we deliver technology that drives
+      growth and builds digital resilience.
+    </p>
+    <p>
+      Founded by a passionate technology enthusiast with a vision to bridge the gap between local businesses and
+      cutting-edge IT solutions, <strong>Samrades</strong> combines technical expertise with personalized service.
+      Our team is committed to delivering reliable, future-ready solutions that help our clients stay ahead in a
+      rapidly evolving digital world.
+    </p>
+    <a href="about.html" class="know-more-button">Know More</a>
   </section>
-  <br>
-
-  <!-- service Section -->
+<br>
   <section id="services">
-    <div class="services-container">
-      <h2>Our Services</h2>
-      <div class="service-grid">
-        <div class="service-card">
-          <h3>Website Development</h3>
-          <p>Custom, responsive websites tailored to your brand, ensuring seamless user experience and modern design.</p>
-        </div>
-  
-        <div class="service-card">
-          <h3>Software Development</h3>
-          <p>Robust software solutions developed to meet your business goals using the latest technology stacks.</p>
-        </div>
-  
-        <div class="service-card">
-          <h3>Hosting</h3>
-          <p>Reliable and secure hosting services with high uptime, performance, and full technical support.</p>
-        </div>
-  
-        <div class="service-card">
-          <h3>IT Consulting</h3>
-          <p>Expert guidance to help businesses align their IT strategy with operational goals efficiently.</p>
-        </div>
-  
-        <div class="service-card">
-          <h3>IT Services</h3>
-          <p>Comprehensive IT solutions including infrastructure setup, maintenance, and ongoing support.</p>
-        </div>
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Website Development</h3>
+        <p>Custom, responsive websites tailored to your brand, ensuring seamless user experience and modern design.</p>
       </div>
+      <div class="service-card">
+        <h3>Software Development</h3>
+        <p>Robust software solutions developed to meet your business goals using the latest technology stacks.</p>
+      </div>
+      <div class="service-card">
+        <h3>Hosting</h3>
+        <p>Reliable and secure hosting services with high uptime, performance, and full technical support.</p>
+      </div>
+      <div class="service-card">
+        <h3>IT Consulting</h3>
+        <p>Comprehensive IT solutions including infrastructure setup, maintenance, and ongoing support.</p>
+      </div>
+      
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="services.html" class="know-more-button">Know More</a>
     </div>
   </section>
-
-  <br>
-  
-  <!-- development Section -->
+<br>
   <section id="process">
-    <div class="process-container">
-      <h2>From Your Idea to Reality</h2>
-      <p class="subtitle">We turn your vision into powerful digital solutions through a step-by-step process.</p>
-  
-      <div class="process-grid">
-        <div class="step">
-          <h3>Idea</h3>
-          <p>You bring the vision — we listen, understand, and refine it into a clear concept.</p>
-        </div>
-  
-        <div class="step">
-          <h3>Planning</h3>
-          <p>We strategize, scope, and schedule your project to ensure efficiency and clarity.</p>
-        </div>
-  
-        <div class="step">
-          <h3>Design</h3>
-          <p>Our UI/UX experts craft clean, user-focused interfaces that reflect your brand.</p>
-        </div>
-  
-        <div class="step">
-          <h3>Development</h3>
-          <p>Using modern languages and frameworks, we build fast and scalable applications.</p>
-        </div>
-  
-        <div class="step">
-          <h3>Testing</h3>
-          <p>We test thoroughly for bugs, performance, and usability across all devices.</p>
-        </div>
-  
-        <div class="step">
-          <h3>Deployment</h3>
-          <p>Your product goes live — fully hosted, secure, and ready to grow with you.</p>
-        </div>
+    <h2>From Your Idea to Reality</h2>
+    <p class="subtitle">We turn your vision into powerful digital solutions through a step-by-step process.</p>
+    <div class="process-grid">
+      <div class="step">
+        <h3>Idea</h3>
+        <p>You bring the vision — we listen, understand, and refine it into a clear concept.</p>
+      </div>
+      <div class="step">
+        <h3>Planning & Design</h3>
+        <p>We ensure efficiency and clarity of your project and Our experts will designs the interfaces that reflect your brand.</p>
+      </div>
+      <div class="step">
+        <h3>Development</h3>
+        <p>Using modern languages and frameworks, we build fast and scalable applications.</p>
+      </div>
+      <div class="step">
+        <h3>Testing</h3>
+        <p>We test thoroughly for bugs, performance, and usability across all devices.</p>
+      </div>
+      <div class="step">
+        <h3>Deployment</h3>
+        <p>Your product goes live — fully hosted, secure, and ready to grow with you.</p>
       </div>
     </div>
   </section>
-  
-  <br>
-
-  <!-- contacts Section -->
+<br>
   <section id="cta">
-    <div class="cta-container">
-      <h2>Ready to Transform Your Idea into Digital Reality?</h2>
-      <p>Whether you’re starting from scratch or looking to grow your business, We're here to help you. Let’s build something great together.</p>
-      <a href="contact.html" class="cta-button">Reach Us</a>
-    </div>
+    <h2>Ready to Transform Your Idea into Digital Reality?</h2>
+    <p>Whether you’re starting from scratch or looking to grow your business, We're here to help you. Let’s build something great together.</p>
+    <a href="contact.html" class="cta-button">Reach Us</a>
   </section>
-  <br>
-  
-  <!-- footer Section -->
-<footer>
-  <div class="footer-container">
-
-    <!-- About Section -->
-    <div class="footer-col">
-      <h3>Samrades</h3>
-      <p>A Thanjavur-based IT company turning your ideas into scalable digital solutions through websites, software, consulting, and more.</p>
-
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+<br>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Samrades</h3>
+        <p>A Thanjavur-based IT company turning your ideas into scalable digital solutions through websites, software, consulting, and more.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <p><a href="#">Home</a></p>
+        <p><a href="#about">About</a></p>
+        <p><a href="#services">Services</a></p>
+        <p><a href="#cta">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <p>No.123, Main Street, Thanjavur, Tamil Nadu</p>
+        <p>+91 98765 43210</p>
+        <p>contact@samrades.com</p>
       </div>
     </div>
-
-    <!-- Quick Links -->
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Samrades. All rights reserved.</p>
     </div>
-
-    <!-- Contact Info -->
-    <div class="footer-col">
-      <h4>Contact Us</h4>
-      <p>No.123, Main Street, Thanjavur, Tamil Nadu</p>
-      <p>+91 98765 43210</p>
-      <p>contact@samrades.com</p>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>&copy; 2025 Samrades. All rights reserved.</p>
-  </div>
-</footer>
-
-  <!-- JavaScript for toggle -->
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const nav = document.getElementById('nav');
-
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-
-    // Optional: Close menu when a link is clicked (on mobile)
-    document.querySelectorAll('nav ul li a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (nav.classList.contains('active')) {
-          nav.classList.remove('active');
-        }
-      });
-    });
-
-
-    // Fade in effect when the section is in the viewport
-document.addEventListener('DOMContentLoaded', () => {
-  const aboutSection = document.querySelector('.about-container');
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.3,
-    }
-  );
-
-  if (aboutSection) {
-    observer.observe(aboutSection);
-  }
-});
-
-//services
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.service-card');
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-    }
-  );
-
-  cards.forEach(card => observer.observe(card));
-});
-
-  </script>
-
+  </footer>
 
 </body>
 </html>

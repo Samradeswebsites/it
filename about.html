@@ -3,143 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us | Samrades</title>
+  <title>Samrades</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap">
   <style>
-    :root {
-      --primary-color: #0d47a1;
-      --accent-color: #ffca28;
-      --bg-color: #f4f6f8;
-      --text-color: #000000;
-      --white: #fff;
-      --transition: 0.3s ease;
-    }
-
+    /* Reset & Base */
     * {
-      margin: 10px;
+      margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      font-family: 'Segoe UI', sans-serif;
+background-color: #ffffff;      
+color: #ffffff;
       line-height: 1.7;
+      scroll-behavior: smooth;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Header */
     header {
-      background: var(--primary-color);
-      color: var(--white);
-      padding: 1.5rem 2rem;
+      background-color: #1c1c1c;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 100;
     }
 
-    header h1 {
-      font-size: 1.8rem;
+    .logo {
+      font-size: 24px;
+      color: #fff;
       font-weight: bold;
     }
 
-    nav a {
-      color: var(--white);
-      margin-left: 1.5rem;
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
       text-decoration: none;
-      font-weight: 500;
-      transition: color var(--transition);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      transition: 0.3s;
     }
 
-    nav a:hover {
-      color: var(--accent-color);
+    nav ul li a:hover {
+      background-color: #444;
     }
 
-    main {
-      padding: 3rem 1rem;
-      max-width: 1500px;
-      margin: auto;
-    }
+    nav ul li a.active {
+      background-color: #bf7b2b;
+    }/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .section {
-      background-color: var(--white);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
+/* Section Base */
+.section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  margin-bottom: 60px;
+}
 
-    .section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .section h2 {
-      color: var(--primary-color);
-      border-left: 5px solid var(--accent-color);
-      padding-left: 0.8rem;
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-    }
+.section h2 {
+  font-size: 34px;
+  margin-bottom: 25px;
+  color: #222;
+  text-align: center;
+}
 
-    .section p {
-      font-size: 1.05rem;
-    }
+.section p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.9;
+  text-align: justify;
+  margin-bottom: 20px;
+}
 
-    footer {
-      text-align: center;
-      background-color: var(--primary-color);
-      color: var(--white);
-      padding: 1.2rem;
-      font-size: 0.95rem;
-      margin-top: 3rem;
-    }
+/* Founder Section */
+.founder-section {
+  background-color: #fdf9f3;
+}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+/* Process Section */
+#process {
+  background-color: #181818;
+  padding: 80px 20px;
+  text-align: center;
+}
 
-      nav {
-        margin-top: 1rem;
-      }
+#process h2 {
+  color: #fff;
+}
 
-      nav a {
-        margin-left: 0;
-        margin-right: 1rem;
-      }
+#process .subtitle {
+  color: #ccc;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
 
-      .section h2 {
-        font-size: 1.4rem;
-      }
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
 
-      .section p {
-        font-size: 1rem;
-      }
-    }
-    .founder-image {
-    width: 1500px;
-    }
+.step {
+  background: #222;
+  padding: 30px 25px;
+  border-radius: 16px;
+  border: 1px solid #333;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(255, 183, 77, 0.3);
+}
+
+.step h3 {
+  color: #ffb347;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.step p {
+  color: #ccc;
+  font-size: 15px;
+}
+
+/* Footer */
+footer {
+  background-color: #101010;
+  color: #999;
+  text-align: center;
+  padding: 30px 0;
+  font-size: 14px;
+  border-top: 1px solid #333;
+}
+
+
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Samrades</h1>
+    <div class="logo">Samrades</div>
     <nav>
-      <a href="#about">About</a>
-      <a href="#vision">Vision</a>
-      <a href="#mission">Mission</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="experience.html">Experiences</a></li>
+        <li><a href="career.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
   </header>
-
+<br>
   <main>
     <section id="about" class="section">
       <h2>About Us</h2>
@@ -158,45 +205,52 @@
         rapidly evolving digital world.
       </p>
     </section>
-
+    <br>
     <section id="founder" class="section founder-section">
-        <div class="founder-container">
-          <div class="founder-content">
-            <h2>Our Founder</h2>
-            <p>
-              <strong>Samrades</strong> was founded by a visionary entrepreneur from Thanjavur with a passion for bridging the gap between local businesses and world-class digital solutions. With a strong technical background and deep understanding of market challenges, our founder envisioned a future where even the smallest enterprise could access scalable and secure IT services tailored to their needs.
-            </p>
-            <p>
-              With years of experience in software development, system architecture, and consulting, our founder has laid the foundation for a company that values innovation, simplicity, and long-term client relationships. Their leadership is marked by a commitment to ethical technology, user-centered design, and empowering local talent to create globally relevant solutions.
-            </p>
-            <p>
-              Beyond business, our founder is a mentor, a community advocate, and a firm believer in lifelong learning — inspiring the Samrades team to continuously grow, innovate, and serve with purpose.
-            </p>
-          </div>
+      <div class="founder-container">
+        <div class="founder-content">
+          <h2>Our Founder</h2>
+          <p>
+            <strong>Samrades</strong> was founded by a visionary entrepreneur from Thanjavur with a passion for bridging
+            the gap between local businesses and world-class digital solutions.
+          </p>
+          <p>
+            With years of experience in software development, system architecture, and consulting, our founder has laid
+            the foundation for a company that values innovation, simplicity, and long-term client relationships.
+          </p>
+          <p>
+            Beyond business, our founder is a mentor, a community advocate, and a firm believer in lifelong learning —
+            inspiring the Samrades team to continuously grow, innovate, and serve with purpose.
+          </p>
         </div>
-      </section>
-      
+      </div>
+    </section>
+    <br>
     <section id="vision" class="section">
       <h2>Our Vision</h2>
       <p>
-        At <strong>Samrades</strong>, our vision is to become a trusted digital transformation partner for businesses across all industries, starting from local roots and reaching a global impact. We aim to empower enterprises with innovative, scalable, and secure IT solutions that not only solve today’s challenges but also prepare them for the future. By combining technology with insight, we envision a digitally inclusive future where every business, regardless of size, can thrive with the right tools and support.
+        Our vision is to become a trusted digital transformation partner for businesses across all industries. We aim to
+        empower enterprises with scalable and secure IT solutions that solve today’s challenges and prepare them for
+        tomorrow. We envision a digitally inclusive future where every business thrives with the right tools and support.
       </p>
     </section>
-
+    <br>
     <section id="mission" class="section">
       <h2>Our Mission</h2>
       <p>
-        Our mission at <strong>Samrades</strong> is to deliver tailored, high-quality technology solutions that drive measurable business value. We are committed to simplifying complex IT challenges through website development, custom software, secure hosting, and infrastructure services — all while ensuring a user-focused experience. With a foundation of trust, innovation, and local engagement, we strive to help businesses build resilience, scale confidently, and adapt quickly in a fast-paced digital era.
+        Our mission at <strong>Samrades</strong> is to deliver tailored, high-quality technology solutions that drive
+        measurable business value. We simplify complex IT challenges through development, hosting, and consulting —
+        building trust and long-term partnerships in a fast-paced digital world.
       </p>
     </section>
   </main>
-
+  <br>
   <footer>
     <p>&copy; <span id="year"></span> Samrades. All rights reserved.</p>
   </footer>
 
   <script>
-    // Set current year in footer
+    // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Reveal sections on scroll
@@ -204,17 +258,39 @@
 
     function revealOnScroll() {
       const triggerBottom = window.innerHeight * 0.85;
-
       sections.forEach(section => {
         const sectionTop = section.getBoundingClientRect().top;
-
         if (sectionTop < triggerBottom) {
           section.classList.add("show");
         }
       });
     }
 
-    window.addEventListener("scroll", revealOnScroll);
+    // Highlight nav link on scroll
+    const navLinks = document.querySelectorAll("nav a");
+
+    function updateActiveLink() {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", () => {
+      revealOnScroll();
+      updateActiveLink();
+    });
+
     window.addEventListener("load", revealOnScroll);
   </script>
 </body>
