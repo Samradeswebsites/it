@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Career - Samrades IT Company</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset and base */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #222 url("9.jpg") no-repeat center/cover;
+      color: #fff;
+      min-height: 100vh;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* avoid padding on body to prevent scroll issues with sticky header */
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 1rem 2rem;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+      user-select: none;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 1.2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: #00796b;
+    }
+
+    /* Hamburger styles omitted for brevity but can be added */
+
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 960px;
+      padding: 3rem 1rem 4rem;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+    }
+
+    form {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 3rem 3rem 2rem;
+      border-radius: 12px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem 2.5rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      transition: background-color 0.3s ease;
+      color: #eee;
+    }
+    form:hover {
+      background: rgba(0, 0, 0, 0.85);
+    }
+
+    h1 {
+      grid-column: 1 / -1;
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #fff;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+      font-size: 2.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      color: #eee;
+      user-select: none;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    select,
+    input[type="file"] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.8px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #fff;
+      color: #000;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder,
+    input[type="tel"]::placeholder,
+    input[type="url"]::placeholder {
+      color: #555;
+    }
+
+    input[type="file"] {
+      padding: 8px 10px;
+    }
+
+    select {
+      background: #fff;
+      color: #000;
+      cursor: pointer;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="url"]:focus,
+    select:focus,
+    input[type="file"]:focus {
+      outline: none;
+      border-color: #00796b;
+      box-shadow: 0 0 5px #00796b;
+      background: #f0f9f7;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .error {
+      color: #ff6b6b;
+      font-size: 0.9rem;
+      min-height: 1.2em;
+      margin-top: 0.25rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      user-select: none;
+    }
+    .error.visible {
+      opacity: 1;
+    }
+
+    button {
+      grid-column: 1 / -1;
+      padding: 16px;
+      background: #00796b;
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.15s ease;
+      box-shadow: 0 5px 12px rgba(0, 121, 107, 0.4);
+      user-select: none;
+    }
+    button:hover,
+    button:focus-visible {
+      background: #004d40;
+      outline: none;
+      transform: scale(1.05);
+      box-shadow: 0 7px 18px rgba(0, 77, 64, 0.7);
+    }
+
+    @media (max-width: 640px) {
+      form {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem 1.5rem;
+      }
+      button {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Samrades</div>
+
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="experience.html">Experiences</a></li>
+        <li><a href="career.html" aria-current="page">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form id="careerForm" novalidate aria-label="Career Application Form">
+      <h1>For Careers</h1>
+
+      <div>
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" placeholder="John Doe" required aria-describedby="error-name" />
+        <div class="error" id="error-name" aria-live="assertive"></div>
+      </div>
+
+      <div>
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com" required aria-describedby="error-email" />
+        <div class="error" id="error-email" aria-live="assertive"></div>
+      </div>
+
+      <div>
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91 96345 67890" required aria-describedby="error-phone" />
+        <div class="error" id="error-phone" aria-live="assertive"></div>
+      </div>
+
+      <div>
+        <label for="location">Location *</label>
+        <input type="text" id="location" name="location" placeholder="City, Country" required aria-describedby="error-location" />
+        <div class="error" id="error-location" aria-live="assertive"></div>
+      </div>
+
+      <div>
+        <label for="role">Role Applying For *</label>
+        <select id="role" name="role" required aria-describedby="error-role">
+          <option value="" disabled selected>Select Role</option>
+          <option value="Frontend Developer">Frontend Developer</option>
+          <option value="Backend Developer">Backend Developer</option>
+          <option value="Fullstack Developer">Fullstack Developer</option>
+          <option value="UI/UX Designer">UI/UX Designer</option>
+          <option value="Project Manager">Project Manager</option>
+          <option value="Other">Other</option>
+        </select>
+        <div class="error" id="error-role" aria-live="assertive"></div>
+      </div>
+
+      <div>
+        <label for="linkedin">LinkedIn Profile URL</label>
+        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/username" aria-describedby="error-linkedin" />
+        <div class="error" id="error-linkedin" aria-live="assertive"></div>
+      </div>
+
+      <div>
+        <label for="portfolio">Portfolio URL</label>
+        <input type="url" id="portfolio" name="portfolio" placeholder="https://yourportfolio.com" aria-describedby="error-portfolio" />
+        <div class="error" id="error-portfolio" aria-live="assertive"></div>
+      </div>
+
+      <div class="full-width">
+        <label for="resume">Upload Resume (PDF only) *</label>
+        <input type="file" id="resume" name="resume" accept="application/pdf" required aria-describedby="error-resume" />
+        <div class="error" id="error-resume" aria-live="assertive"></div>
+      </div>
+
+      <button type="submit" aria-label="Submit Application">Submit</button>
+    </form>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    (function () {
+      const form = document.getElementById('careerForm');
+
+      // Validation helpers
+      const isEmailValid = email =>
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      const isPhoneValid = phone =>
+        /^\+?[\d\s\-]{7,15}$/.test(phone);
+
+      const isUrlValid = url => {
+        if (!url) return true; // optional
+        try {
+          new URL(url);
+          return true;
+        } catch {
+          return false;
+        }
+      };
+
+      function showError(fieldId, message) {
+        const errorEl = document.getElementById(`error-${fieldId}`);
+        if (errorEl) {
+          errorEl.textContent = message;
+          errorEl.classList.add('visible');
+          const inputEl = document.getElementById(fieldId);
+          inputEl.setAttribute('aria-invalid', 'true');
+        }
+      }
+
+      function clearErrors() {
+        form.querySelectorAll('.error').forEach(el => {
+          el.textContent = '';
+          el.classList.remove('visible');
+        });
+        form.querySelectorAll('input, select').forEach(el => {
+          el.removeAttribute('aria-invalid');
+        });
+      }
+
+      function generatePDF(data) {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        doc.setFontSize(24);
+        doc.setTextColor('#00796b');
+        doc.text('Career Application', 105, 25, null, null, 'center');
+
+        doc.setFontSize(14);
+        doc.setTextColor('#222');
+        const lineHeight = 12;
+        let y = 45;
+
+        const leftMargin = 25;
+        doc.text(`Full Name: ${data.name}`, leftMargin, y);
+        y += lineHeight;
+        doc.text(`Location: ${data.location}`, leftMargin, y);
+        y += lineHeight;
+        doc.text(`Role Applying For: ${data.role}`, leftMargin, y);
+        y += lineHeight;
+        doc.text(`Email: ${data.email}`, leftMargin, y);
+        y += lineHeight;
+        doc.text(`Phone: ${data.phone}`, leftMargin, y);
+        y += lineHeight;
+        if (data.linkedin) {
+          doc.text(`LinkedIn: ${data.linkedin}`, leftMargin, y);
+          y += lineHeight;
+        }
+        if (data.portfolio) {
+          doc.text(`Portfolio: ${data.portfolio}`, leftMargin, y);
+          y += lineHeight;
+        }
+
+        doc.setFontSize(10);
+        doc.setTextColor('#555');
+        doc.text('Thank you for applying to Samrades IT Company.', 105, y + 35, null, null, 'center');
+
+        doc.save(`${data.name.replace(/\s+/g, '_')}_Career_Application.pdf`);
+      }
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        clearErrors();
+
+        let valid = true;
+
+        const name = form.name.value.trim();
+        if (name.length < 3) {
+          showError('name', 'Please enter a valid name (at least 3 characters).');
+          valid = false;
+        }
+
+        const location = form.location.value.trim();
+        if (location.length < 2) {
+          showError('location', 'Please enter your location.');
+          valid = false;
+        }
+
+        const role = form.role.value;
+        if (!role) {
+          showError('role', 'Please select the role you are applying for.');
+          valid = false;
+        }
+
+        const email = form.email.value.trim();
+        if (!isEmailValid(email)) {
+          showError('email', 'Please enter a valid email address.');
+          valid = false;
+        }
+
+        const phone = form.phone.value.trim();
+        if (!isPhoneValid(phone)) {
+          showError('phone', 'Please enter a valid phone number.');
+          valid = false;
+        }
+
+        const linkedin = form.linkedin.value.trim();
+        if (!isUrlValid(linkedin)) {
+          showError('linkedin', 'Please enter a valid LinkedIn URL.');
+          valid = false;
+        }
+
+        const portfolio = form.portfolio.value.trim();
+        if (!isUrlValid(portfolio)) {
+          showError('portfolio', 'Please enter a valid portfolio URL.');
+          valid = false;
+        }
+
+        const resume = form.resume.files[0];
+        if (!resume) {
+          showError('resume', 'Please upload your resume.');
+          valid = false;
+        } else if (resume.type !== 'application/pdf') {
+          showError('resume', 'Resume must be a PDF file.');
+          valid = false;
+        }
+
+        if (!valid) return;
+
+        // If all valid, generate PDF
+        generatePDF({ name, location, role, email, phone, linkedin, portfolio });
+      });
+    })();
+  </script>
+</body>
+</html>
