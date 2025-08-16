@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Samrades IT Company</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      background-color: black;
+      background-size: cover;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      backdrop-filter: blur(5px);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      font-weight: 500;
+      padding: 8px 18px;
+      border-radius: 25px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #f2a154;
+      color: #000;
+    }
+/* Mobile Nav - Hidden by default */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  #nav-menu {
+    display: none;
+    width: 100%;
+  }
+
+  #nav-menu.open {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav ul li a {
+    padding: 12px 20px;
+    border-bottom: 1px solid #333;
+  }
+}
+    /* Section Styling */
+    section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      text-align: center;
+      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+
+    .cards,
+    .experience-list,
+    .sample-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      font-size: 23;
+    }
+
+    .card, .experience-item, .sample-item {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 25px;
+      backdrop-filter: blur(4px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover,
+    .experience-item:hover,
+    .sample-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(255,255,255,0.15);
+    }
+
+    .card h3,
+    .experience-item,
+    .sample-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .service-detail {
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      text-align: center;
+      align-items: center;
+    }
+
+    .service-detail img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+
+    .service-detail h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .service-detail p {
+      line-height: 1.6;
+      font-size: 1rem;
+      opacity: 0.95;
+      font-size: 20px;
+    }
+
+    .experience-item {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .experience-item i {
+      font-size: 1.3rem;
+    }
+
+    .sample-title {
+      margin-bottom: 10px;
+    }
+
+    .sample-desc {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+
+    .btn-view {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 2px solid white;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-view:hover {
+      background-color: white;
+      color: black;
+    }
+
+    /* Scroll Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+        background: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+        display: none;
+      }
+
+      nav ul.open {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 1.6rem;
+        color: white;
+      }
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+  </style>
+
+  <script>
+    // Scroll animation
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const height = window.innerHeight;
+        if (top < height - 100) {
+          el.classList.add('active');
+        }
+      });
+    });
+
+    // Mobile nav toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.querySelector('nav ul');
+
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <section id="process">
+    <h2>From Your Idea to Reality</h2>
+    <p class="subtitle">We turn your vision into powerful digital solutions through a step-by-step process.</p>
+    <div class="process-grid">
+      <div class="step">
+        <h3>Idea</h3>
+        <p>You bring the vision — we listen, understand, and refine it into a clear concept.</p>
+      </div>
+      <div class="step">
+        <h3>Planning & Design</h3>
+        <p>We ensure efficiency and clarity of your project and Our experts will designs the interfaces that reflect your brand.</p>
+      </div>
+      <div class="step">
+        <h3>Development</h3>
+        <p>Using modern languages and frameworks, we build fast and scalable applications.</p>
+      </div>
+      <div class="step">
+        <h3>Testing</h3>
+        <p>We test thoroughly for bugs, performance, and usability across all devices.</p>
+      </div>
+      <div class="step">
+        <h3>Deployment</h3>
+        <p>Your product goes live — fully hosted, secure, and ready to grow with you.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Experience Section -->
+  <section class="reveal">
+    <h2>Our Experience</h2>
+    <div class="experience-list">
+      <div class="experience-item"><i class="fas fa-plane-departure"></i> Travel Apps</div>
+      <div class="experience-item"><i class="fas fa-calendar-check"></i> Booking Systems</div>
+      <div class="experience-item"><i class="fas fa-magic"></i> Bridal Portfolios</div>
+      <div class="experience-item"><i class="fas fa-shopping-cart"></i> Shopping Apps</div>
+      <div class="experience-item"><i class="fas fa-store"></i> E-Commerce</div>
+      <div class="experience-item"><i class="fas fa-mobile-alt"></i> Mobile Applications</div>
+    </div>
+  </section>
+Want Projects</h2>
+    <div class="sample-list">
+      <div class="sample-item">
+        <div class="sample-title">Bridal Makeup Portfolio</div>
+        <div class="sample-desc">Elegant and responsive gallery site showcasing bridal transformations.</div>
+        <a href="#" class="btn-view">View It</a>
+      </div>
+      <div class="sample-item">
+        <div class="sample-title">Travel Booking Platform</div>
+        <div class="sample-desc">Full-featured platform for booking flights, hotels, and activities.</div>
+        <a href="#" class="btn-view">View It</a>
+      </div>
+      <div class="sample-item">
+        <div class="sample-title">Enterprise Software</div>
+        <div class="sample-desc">Robust enterprise solution for inventory, client, and team management.</div>
+        <a href="#" class="btn-view">View It</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

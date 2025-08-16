@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Samrades</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     /* Reset & Base */
     * {
@@ -14,21 +15,36 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-background-color: #ffffff;      
-color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #ffffff;
       line-height: 1.7;
       scroll-behavior: smooth;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
     a {
-      color: inherit;
+      color: #ffb347;
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover,
+    a:focus {
+      color: #ffd87d;
+      outline: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
 
     /* Header */
     header {
-      background-color: #1c1c1c;
+      background: linear-gradient(90deg, #0b1544, #031234);
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
@@ -36,328 +52,332 @@ color: #ffffff;
       position: sticky;
       top: 0;
       z-index: 100;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);
+      backdrop-filter: saturate(180%) blur(10px);
     }
 
     .logo {
-      font-size: 24px;
-      color: #fff;
-      font-weight: bold;
+      font-size: 28px;
+      color: #ffb347;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 5px #ffb347aa;
     }
 
     nav ul {
       display: flex;
       list-style: none;
-      gap: 25px;
+      gap: 24px;
     }
 
     nav ul li a {
-      text-decoration: none;
-      color: white;
+      color: #ffffff;
       padding: 10px 20px;
-      border-radius: 20px;
-      transition: 0.3s;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: background 0.4s ease, color 0.4s ease;
+      box-shadow: inset 0 0 0 0 #ffb347;
+      border: 2px solid transparent;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
     }
 
-    nav ul li a:hover {
-      background-color: #444;
-    }
-
+    nav ul li a:hover,
     nav ul li a.active {
-      background-color: #bf7b2b;
-    }/* Reset & Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      background: #ffb347;
+      color: #031234;
+      box-shadow: inset 200px 0 0 0 #ffb347;
+      border-color: #ffb347;
+      font-weight: 700;
+    }
 
-/* Section Base */
-.section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  margin-bottom: 60px;
-}
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 150;
+    }
 
-.section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .hamburger span {
+      width: 28px;
+      height: 3.5px;
+      background-color: #ffb347;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
 
-.section h2 {
-  font-size: 34px;
-  margin-bottom: 25px;
-  color: #222;
-  text-align: center;
-}
+    /* Section Base */
+    .section {
+      padding: 80px 30px;
+      max-width: 1200px;
+      margin: 0 auto 60px auto;
+      background-color: #031234;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      backdrop-filter: saturate(180%) blur(12px);
+      border: 1.5px solid #ffb34766;
+      position: relative;
+      overflow: hidden;
+    }
 
-.section p {
-  font-size: 18px;
-  color: #555;
-  line-height: 1.9;
-  text-align: justify;
-  margin-bottom: 20px;
-}
+    .section::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      left: -30%;
+      width: 160%;
+      height: 160%;
+      background: radial-gradient(circle at center, #ffb34722 20%, transparent 70%);
+      transform: rotate(25deg);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-/* Founder Section */
-.founder-section {
-  background-color: #fdf9f3;
-}
+    .section.show {
+      opacity: 1;
+      transform: translateY(0);
+      z-index: 1;
+    }
 
-/* Process Section */
-#process {
-  background-color: #181818;
-  padding: 80px 20px;
-  text-align: center;
-}
+    .section h2 {
+      font-size: 38px;
+      margin-bottom: 30px;
+      color: #ffb347;
+      text-align: center;
+      letter-spacing: 1.1px;
+      text-shadow: 1px 1px 6px #ffb34799;
+      position: relative;
+      z-index: 1;
+    }
 
-#process h2 {
-  color: #fff;
-}
+    .section p {
+      font-size: 18px;
+      color: #ffffff;
+      text-align: justify;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      line-height: 1.8;
+    }
 
-#process .subtitle {
-  color: #ccc;
-  margin-bottom: 40px;
-  font-size: 18px;
-}
+    .founder-section {
+      background: #031234;
+      border-color: #ffb347aa;
+    }
 
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
+    /* Footer */
+    footer {
+      background: #031234;
+      color: #ffffff;
+      padding: 60px 20px 30px;
+      font-size: 14px;
+      border-top: 2px solid #ffb347;
+    }
 
-.step {
-  background: #222;
-  padding: 30px 25px;
-  border-radius: 16px;
-  border: 1px solid #333;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .footer-container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 40px;
+    }
 
-.step:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(255, 183, 77, 0.3);
-}
+    .footer-column h3 {
+      color: #ffb347;
+      font-size: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 1.3px;
+      text-shadow: 1px 1px 5px #ffb347aa;
+    }
 
-.step h3 {
-  color: #ffb347;
-  margin-bottom: 12px;
-  font-size: 20px;
-}
+    .footer-column ul {
+      list-style: none;
+    }
 
-.step p {
-  color: #ccc;
-  font-size: 15px;
-}
+    .footer-column ul li {
+      margin-bottom: 14px;
+    }
 
-/* Footer */
-footer {
-  background-color: #101010;
-  color: #999;
-  text-align: center;
-  padding: 30px 0;
-  font-size: 14px;
-  border-top: 1px solid #333;
-}
+    .footer-column a {
+      color: #ccc;
+      transition: color 0.3s ease;
+    }
 
-/* Responsive CSS */
-@media (max-width: 768px) {
-  /* Stack header items vertically */
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
+    .footer-column a:hover {
+      color: #ffb347;
+    }
 
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 6px;
-    margin-top: 10px;
-  }
+    .social-icons a {
+      display: inline-block;
+      margin-right: 18px;
+      font-size: 22px;
+      color: #ccc;
+      transition: color 0.3s ease;
+    }
 
-  .hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    border-radius: 3px;
-    transition: 0.3s ease;
-  }
+    .social-icons a:hover {
+      color: #ffb347;
+      text-shadow: 0 0 8px #ffb347cc;
+    }
 
-  nav {
-    width: 100%;
-  }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
 
-  #nav-menu {
-    display: none;
-    width: 100%;
-  }
+      nav {
+        width: 100%;
+      }
 
-  #nav-menu.open {
-    display: block;
-  }
+      #nav-menu {
+        display: none;
+        width: 100%;
+        background: #0b1544dd;
+        backdrop-filter: saturate(180%) blur(10px);
+        border-radius: 0 0 18px 18px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        position: absolute;
+        top: 70px;
+        left: 0;
+      }
 
-  nav ul {
-    flex-direction: column;
-    gap: 0;
-    width: 100%;
-  }
+      #nav-menu.open {
+        display: block;
+      }
 
-  nav ul li {
-    width: 100%;
-  }
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+      }
 
-  nav ul li a {
-    display: block;
-    padding: 12px 20px;
-    border-bottom: 1px solid #333;
-    width: 100%;
-  }
+      nav ul li a {
+        display: block;
+        padding: 15px 25px;
+        border-bottom: 1px solid #224c94;
+        font-weight: 700;
+        letter-spacing: 1.1px;
+        text-transform: uppercase;
+      }
 
-  /* Section text padding and font size */
-  .section {
-    padding: 60px 15px;
-  }
-
-  .section h2 {
-    font-size: 26px;
-  }
-
-  .section p {
-    font-size: 16px;
-  }
-
-  /* Process cards on smaller screens */
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .step {
-    padding: 20px;
-  }
-
-  /* Footer padding */
-  footer {
-    padding: 20px 10px;
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    font-size: 20px;
-  }
-
-  .section h2 {
-    font-size: 22px;
-  }
-
-  .section p {
-    font-size: 15px;
-  }
-}
+      nav ul li a:hover,
+      nav ul li a.active {
+        background-color: #ffb347;
+        color: #031234;
+        border-bottom-color: transparent;
+      }
+    }
 
   </style>
 </head>
 <body>
 
-
+  <!-- Header -->
   <header>
     <div class="logo">Samrades</div>
-  
-    <div class="hamburger" id="hamburger">
+    <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
       <span></span>
       <span></span>
       <span></span>
     </div>
-  
-    <nav id="nav-menu">
+    <nav id="nav-menu" role="navigation" aria-label="Primary Navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="experience.html">Experiences</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
-<br>
+
+  <!-- Main Content -->
   <main>
-    <section id="about" class="section">
+    <section id="about" class="section" tabindex="0">
       <h2>About Us</h2>
-      <p>
-        At <strong>Samrades</strong>, we are a Thanjavur-based IT company dedicated to empowering businesses through
-        innovative digital solutions. Our core services include <strong>website development</strong>,
-        <strong>custom software development</strong>, <strong>secure hosting solutions</strong>,
-        <strong>IT infrastructure services</strong>, and expert <strong>IT consulting</strong> tailored to your business
-        needs. With a strong focus on quality, scalability, and user experience, we deliver technology that drives
-        growth and builds digital resilience.
-      </p>
-      <p>
-        Founded by a passionate technology enthusiast with a vision to bridge the gap between local businesses and
-        cutting-edge IT solutions, <strong>Samrades</strong> combines technical expertise with personalized service.
-        Our team is committed to delivering reliable, future-ready solutions that help our clients stay ahead in a
-        rapidly evolving digital world.
-      </p>
+      <p>At <strong>Samrades</strong>, we are a Thanjavur-based IT company dedicated to empowering businesses through innovative digital solutions. Our core services include website development, custom software development, secure hosting, IT infrastructure services, and IT consulting. We prioritize quality, scalability, and user-centric design.</p>
+      <p>Founded by a passionate tech enthusiast, Samrades bridges the gap between local businesses and cutting-edge solutions. We’re committed to delivering reliable, future-ready systems to help you thrive in a digital world.</p>
     </section>
-    <br>
-    <section id="founder" class="section founder-section">
-      <div class="founder-container">
-        <div class="founder-content">
-          <h2>Our Founder</h2>
-          <p>
-            <strong>Samrades</strong> was founded by a visionary entrepreneur from Thanjavur with a passion for bridging
-            the gap between local businesses and world-class digital solutions.
-          </p>
-          <p>
-            With years of experience in software development, system architecture, and consulting, our founder has laid
-            the foundation for a company that values innovation, simplicity, and long-term client relationships.
-          </p>
-          <p>
-            Beyond business, our founder is a mentor, a community advocate, and a firm believer in lifelong learning —
-            inspiring the Samrades team to continuously grow, innovate, and serve with purpose.
-          </p>
-        </div>
-      </div>
+
+    <section id="founder" class="section founder-section" tabindex="0">
+      <h2>Our Founder</h2>
+      <p><strong>Samrades</strong> was established by a visionary entrepreneur from Thanjavur who is passionate about delivering world-class IT services to local and global businesses.</p>
+      <p>With a background in system architecture, software development, and consulting, our founder emphasizes innovation and long-term client trust.</p>
+      <p>A mentor and community builder, our founder inspires the team to continually grow, innovate, and make a difference.</p>
     </section>
-    <br>
-    <section id="vision" class="section">
+
+    <section id="vision" class="section" tabindex="0">
       <h2>Our Vision</h2>
-      <p>
-        Our vision is to become a trusted digital transformation partner for businesses across all industries. We aim to
-        empower enterprises with scalable and secure IT solutions that solve today’s challenges and prepare them for
-        tomorrow. We envision a digitally inclusive future where every business thrives with the right tools and support.
-      </p>
+      <p>We aim to be a trusted digital transformation partner for businesses of all sizes. We envision a digitally inclusive world where enterprises thrive using the right technology and strategic support.</p>
     </section>
-    <br>
-    <section id="mission" class="section">
+
+    <section id="mission" class="section" tabindex="0">
       <h2>Our Mission</h2>
-      <p>
-        Our mission at <strong>Samrades</strong> is to deliver tailored, high-quality technology solutions that drive
-        measurable business value. We simplify complex IT challenges through development, hosting, and consulting —
-        building trust and long-term partnerships in a fast-paced digital world.
-      </p>
+      <p>To deliver tailored, high-quality technology solutions that generate real business results. We simplify complex IT challenges and build lasting partnerships based on trust and innovation.</p>
     </section>
   </main>
-  <br>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; <span id="year"></span> Samrades. All rights reserved.</p>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Samrades</h3>
+        <p>Transforming your ideas into impactful digital solutions — websites, software, consulting, and more.</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="experience.html">Experiences</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <p>No.123, Main Street, Thanjavur, Tamil Nadu</p>
+        <p>+91 98765 43210</p>
+        <p><a href="mailto:samradesit@gmail.com">samradesit@gmail.com</a></p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/yourusername" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:youremail@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+1234567890" aria-label="Phone"><i class="fas fa-phone"></i></a>
+        </div>
+      </div>
+    </div>
   </footer>
 
+  <!-- Scripts -->
   <script>
-    // Set current year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
 
-    // Reveal sections on scroll
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        navMenu.classList.toggle('open');
+      }
+    });
+
+    // Reveal Sections on Scroll
     const sections = document.querySelectorAll(".section");
 
     function revealOnScroll() {
@@ -370,40 +390,10 @@ footer {
       });
     }
 
-    // Highlight nav link on scroll
-    const navLinks = document.querySelectorAll("nav a");
-
-    function updateActiveLink() {
-      let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
-    }
-
-    window.addEventListener("scroll", () => {
-      revealOnScroll();
-      updateActiveLink();
-    });
-
+    window.addEventListener("scroll", revealOnScroll);
     window.addEventListener("load", revealOnScroll);
-  
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('nav-menu');
+  </script>
 
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
-  });
-
-</script>
 </body>
 </html>
+  

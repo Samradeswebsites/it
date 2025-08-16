@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Samrades IT Company</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Google Fonts -->
+  <link href="style.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fcfdff;
+      background-size: cover;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(10, 2, 98, 0.926);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      backdrop-filter: blur(5px);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      font-weight: 500;
+      padding: 8px 18px;
+      border-radius: 25px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #f2a154;
+      color: #000;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      background-color: #fff;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      #nav-menu {
+        display: none;
+        width: 100%;
+      }
+
+      #nav-menu.open {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+      }
+
+      nav ul li a {
+        padding: 12px 20px;
+        border-bottom: 1px solid #333;
+      }
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #052265;
+    }
+
+    .experience-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      font-size: 1.1rem;
+    }
+
+    .experience-item {
+      background-color: rgba(7, 18, 104, 0.926);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .experience-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(255,255,255,0.15);
+    }
+
+    #process {
+      background: #051940;
+      padding: 60px 50px;
+      text-align: center;
+    }
+
+    #process h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    #process .subtitle {
+      color: #ffffff;
+      margin-bottom: 40px;
+      font-size: 20px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background: #122452;
+      border: 1px solid #1e3c78;
+      padding: 30px;
+      border-radius: 20px;
+    }
+
+    .step h3 {
+      color: #ffdb0f;
+      margin-bottom: 10px;
+      font-size: 23px;
+    }
+
+    .step p {
+      color: #ffffff;
+      font-size: 18px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 50px 20px;
+      margin-top: 80px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-column h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #f2a154;
+    }
+
+    .footer-column p,
+    .footer-column li a {
+      color: #ccc;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li a:hover {
+      color: #fff;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #f2a154;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #333;
+      font-size: 14px;
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Samrades</div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="reveal">
+    <h2>Our Experience</h2>
+    <div class="experience-list">
+      <div class="experience-item"><i class="fas fa-plane-departure"></i> Travel Apps</div>
+      <div class="experience-item"><i class="fas fa-calendar-check"></i> Booking Systems</div>
+      <div class="experience-item"><i class="fas fa-magic"></i> Bridal Portfolios</div>
+      <div class="experience-item"><i class="fas fa-shopping-cart"></i> Shopping Apps</div>
+      <div class="experience-item"><i class="fas fa-store"></i> E-Commerce</div>
+      <div class="experience-item"><i class="fas fa-mobile-alt"></i> Mobile Applications</div>
+    </div>
+  </section>
+
+  <section id="process">
+    <h2 style="color: #ffffff;">From Your Idea to Reality</h2>
+    <p class="subtitle">We turn your vision into powerful digital solutions through a step-by-step process.</p>
+    <div class="process-grid">
+      <div class="step">
+        <h3>Idea</h3>
+        <p>You bring the vision — we listen, understand, and refine it into a clear concept.</p>
+      </div>
+      <div class="step">
+        <h3>Planning & Design</h3>
+        <p>Designs the interfaces that reflect your brand.</p>
+      </div>
+      <div class="step">
+        <h3>Development</h3>
+        <p>Using modern languages and frameworks, we build fast and scalable applications.</p>
+      </div>
+      <div class="step">
+        <h3>Testing</h3>
+        <p>We test thoroughly for bugs, performance, and usability across all devices.</p>
+      </div>
+      <div class="step">
+        <h3>Deployment</h3>
+        <p>Your product goes live — fully hosted, secure, and ready to grow with you.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Samrades</h3>
+        <p>We transform your ideas into digital solutions through websites, software, consulting, and more.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <p>No.123, Main Street, Thanjavur, Tamil Nadu</p>
+        <p>+91 98765 43210</p>
+        <p><a href="mailto:samradesit@gmail.com">samradesit@gmail.com</a></p>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:samradesit@gmail.com"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+919876543210"><i class="fas fa-phone"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Samrades. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // Reveal on scroll
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const height = window.innerHeight;
+        if (top < height - 100) {
+          el.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

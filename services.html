@@ -7,6 +7,7 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
@@ -21,7 +22,7 @@
 
     html, body {
       font-family: 'Poppins', sans-serif;
-      background-color: black;
+      background-color: rgb(255, 255, 255);
       background-size: cover;
       color: #fff;
       scroll-behavior: smooth;
@@ -37,7 +38,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: #031234;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -70,154 +71,144 @@
       background-color: #f2a154;
       color: #000;
     }
-/* Mobile Nav - Hidden by default */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
 
-  nav {
-    width: 100%;
-  }
+    /* Mobile Nav */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
 
-  #nav-menu {
-    display: none;
-    width: 100%;
-  }
+      nav {
+        width: 100%;
+      }
 
-  #nav-menu.open {
-    display: block;
-  }
+      #nav-menu {
+        display: none;
+        width: 100%;
+      }
 
-  nav ul {
-    flex-direction: column;
-    gap: 0;
-  }
+      #nav-menu.open {
+        display: block;
+      }
 
-  nav ul li a {
-    padding: 12px 20px;
-    border-bottom: 1px solid #333;
-  }
-}
+      nav ul {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      nav ul li a {
+        padding: 12px 20px;
+        border-bottom: 1px solid #333;
+      }
+    }
+
     /* Section Styling */
     section {
-      padding: 70px 20px;
+      background-color: #ffffff;
+      padding: 70px 40px;
       max-width: 1200px;
-      margin: auto;
+      margin: 40px auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+      color: #e0e7ff;
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 40px;
       text-align: center;
-      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+      color: #031234;
     }
 
-    .cards,
-    .experience-list,
-    .sample-list {
+    .cta-text {
+      color: #031234;
+      font-size: 1.2rem;
+      text-align: center;
+      margin-top: -20px;
+      margin-bottom: 50px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+    }
+
+    .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 25px;
-      font-size: 23;
+      font-size: 20px;
+      padding: 70px;
     }
 
-    .card, .experience-item, .sample-item {
-      background-color: rgba(255, 255, 255, 0.1);
+    .card {
+      background-color: rgb(150, 13, 13);
       border: 2px solid rgba(255, 255, 255, 0.2);
       border-radius: 12px;
-      padding: 25px;
+      padding: 20px;
       backdrop-filter: blur(4px);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      align-content: center;
+      text-align: center;
     }
 
-    .card:hover,
-    .experience-item:hover,
-    .sample-item:hover {
+    .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(255,255,255,0.15);
     }
 
-    .card h3,
-    .experience-item,
-    .sample-title {
+    .card h3 {
       font-size: 1.4rem;
       font-weight: 600;
       text-align: center;
       letter-spacing: 1px;
+      color: #031234;
     }
 
     .service-detail {
-      background-color: rgba(255, 255, 255, 0.08);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
-      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      padding: 25px 30px;
       margin-bottom: 40px;
-      text-align: center;
-      align-items: center;
+      box-shadow: 0 4px 15px rgba(3, 18, 52, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-detail:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(3, 18, 52, 0.7);
     }
 
     .service-detail img {
       width: 100%;
       height: 220px;
       object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      margin-bottom: 25px;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .service-detail h3 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #031234;
+      text-align: center;
+      letter-spacing: 1.2px;
     }
 
     .service-detail p {
-      line-height: 1.6;
-      font-size: 1rem;
-      opacity: 0.95;
-      font-size: 20px;
-    }
-
-    .experience-item {
-      text-align: center;
       font-size: 1.1rem;
-      font-weight: 500;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
+      line-height: 1.6;
+      color: #031234;
+      text-align: justify;
+      opacity: 0.95;
     }
 
-    .experience-item i {
-      font-size: 1.3rem;
+    .hamburger {
+      display: none;
     }
 
-    .sample-title {
-      margin-bottom: 10px;
-    }
-
-    .sample-desc {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      opacity: 0.9;
-      margin-bottom: 20px;
-    }
-
-    .btn-view {
-      display: inline-block;
-      padding: 10px 20px;
-      border: 2px solid white;
-      border-radius: 25px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .btn-view:hover {
-      background-color: white;
-      color: black;
-    }
-
-    /* Scroll Animation */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -254,8 +245,47 @@
       }
     }
 
-    .hamburger {
-      display: none;
+    /* Footer Styling */
+    .footer {
+      background-color: #031234;
+      color: #ffffff;
+      padding: 40px 0;
+      margin-top: 50px;
+      border-top: 2px solid #0b204e;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+      padding: 0 15px;
+      margin-bottom: 30px;
+    }
+
+    .footer h3 {
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    .footer a {
+      color: #ffffff;
+      transition: color 0.3s;
+    }
+
+    .footer a:hover {
+      color: #f2a154;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
     }
 
   </style>
@@ -286,95 +316,118 @@
 
 <body>
 
-  <!-- Header -->
   <header>
     <div class="logo">Samrades</div>
-    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
-    <nav>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="nav-menu">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="experience.html">Experiences</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Services Section -->
-  <section class="reveal">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card"><h3>Website Development</h3></div>
-      <div class="card"><h3>Software Development</h3></div>
-      <div class="card"><h3>Hosting & Deployment</h3></div>
-      <div class="card"><h3>IT Consulting</h3></div>
-    </div>
-  </section>
-
   <!-- Details Section -->
   <section class="reveal">
-    <h2>Our Developments</h2>
+    <h2>Our Services</h2>
+    <p class="cta-text">
+      Explore the services that can support and strengthen your digital growth.  
+      From start to end, we’re here to help you build solutions at last.
+    </p>
 
     <div class="service-detail">
+      <img src="9.jpg" alt="Website Development" />
       <h3>Website Development</h3>
-      <img src="9.jpg" alt="Website Development">
-      <p>Responsive websites tailored to your brand — from portfolios to enterprise solutions.</p>
+      <p>We build responsive websites that fit your brand — from simple personal portfolios to large business solutions.</p>
     </div>
 
     <div class="service-detail">
+      <img src="9.jpg" alt="Software Development" />
       <h3>Software Development</h3>
-      <img src="9.jpg" alt="Software Development">
-      <p>"We build software that helps your business to focus on growing your Business with technology."</p>
+      <p>We build software designed to help your business focus on what matters most — growth.</p>
     </div>
 
     <div class="service-detail">
+      <img src="9.jpg" alt="Hosting" />
       <h3>Hosting & Deployment</h3>
-      <img src="9.jpg" alt="Hosting">
-      <p>Scalable cloud hosting, secure CI/CD pipelines, and real-time performance monitoring.</p>
+      <p>We make it easy to get your website online with scalable cloud hosting and secure workflows.</p>
     </div>
 
     <div class="service-detail">
-      <h3>IT Consulting</h3>
-      <img src="9.jpg" alt="IT Consulting">
-      <p>Expert advice on infrastructure, cloud migration, and security strategies.</p>
+      <img src="9.jpg" alt="IT Services" />
+      <h3>IT Services</h3>
+      <p>We provide comprehensive IT solutions including infrastructure setup, maintenance, and support.</p>
     </div>
   </section>
 
-  <!-- Experience Section -->
-  <section class="reveal">
-    <h2>Our Experience</h2>
-    <div class="experience-list">
-      <div class="experience-item"><i class="fas fa-plane-departure"></i> Travel Apps</div>
-      <div class="experience-item"><i class="fas fa-calendar-check"></i> Booking Systems</div>
-      <div class="experience-item"><i class="fas fa-magic"></i> Bridal Portfolios</div>
-      <div class="experience-item"><i class="fas fa-shopping-cart"></i> Shopping Apps</div>
-      <div class="experience-item"><i class="fas fa-store"></i> E-Commerce</div>
-      <div class="experience-item"><i class="fas fa-mobile-alt"></i> Mobile Applications</div>
-    </div>
-  </section>
+ 
 
-  <!-- Sample Projects -->
-  <section class="reveal">
-    <h2>Sample Projects</h2>
-    <div class="sample-list">
-      <div class="sample-item">
-        <div class="sample-title">Bridal Makeup Portfolio</div>
-        <div class="sample-desc">Elegant and responsive gallery site showcasing bridal transformations.</div>
-        <a href="#" class="btn-view">View It</a>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Samrades</h3>
+        <p>We transform your ideas into digital solutions through websites, software, consulting, and more.</p>
       </div>
-      <div class="sample-item">
-        <div class="sample-title">Travel Booking Platform</div>
-        <div class="sample-desc">Full-featured platform for booking flights, hotels, and activities.</div>
-        <a href="#" class="btn-view">View It</a>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
       </div>
-      <div class="sample-item">
-        <div class="sample-title">Enterprise Software</div>
-        <div class="sample-desc">Robust enterprise solution for inventory, client, and team management.</div>
-        <a href="#" class="btn-view">View It</a>
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <p>No.123, Main Street, Thanjavur, Tamil Nadu</p>
+        <p>+91 98765 43210</p>
+        <p><a href="mailto:samradesit@gmail.com">samradesit@gmail.com</a></p>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:samradesit@gmail.com"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+919876543210"><i class="fas fa-phone"></i></a>
+        </div>
       </div>
     </div>
-  </section>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Samrades. All rights reserved.</p>
+    </div>
+  </footer>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // Reveal on scroll
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const height = window.innerHeight;
+        if (top < height - 100) {
+          el.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

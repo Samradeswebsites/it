@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Samrades</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     /* Reset & Base */
     * {
@@ -14,14 +14,14 @@
     }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #ffffff;
-      color: white;
+      background: #f2f4f8; /* light gray background for entire page */
+      color: #222;
       line-height: 1.6;
     }
 
     /* Header */
     header {
-      background-color: #1c1c1c;
+      background-color: #1f2a44; /* dark navy */
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
@@ -29,12 +29,13 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      color: white;
     }
 
     .logo {
       font-size: 24px;
-      color: #fff;
       font-weight: bold;
+      color: #fff;
     }
 
     nav ul {
@@ -49,33 +50,38 @@
       padding: 10px 20px;
       border-radius: 20px;
       transition: 0.3s;
+      font-weight: 600;
     }
 
     nav ul li a:hover {
-      background-color: #444;
+      background-color: #3a4e7a;
     }
 
     nav ul li a.active {
       background-color: #bf7b2b;
+      color: #fff;
     }
 
     /* About Section */
     #about {
-      background-color: #000000;
+      background-color: #e3e8f0; /* light soft blue-gray */
       padding: 60px 20px;
       text-align: center;
+      color: #222;
     }
 
     #about h2 {
-      font-size: 48px;
+      font-size: 36px;
       margin-bottom: 20px;
+      color: #1f2a44;
     }
 
     #about p {
-      font-size: 20px;
+      font-size: 22px;
       max-width: 900px;
       margin: 0 auto 20px;
-      color: #ddd;
+      color: #444;
+      line-height: 1.7;
     }
 
     /* Know More Button */
@@ -89,6 +95,7 @@
       font-weight: bold;
       transition: background-color 0.3s ease;
       margin-top: 20px;
+      box-shadow: 0 4px 6px rgba(191, 123, 43, 0.4);
     }
 
     .know-more-button:hover {
@@ -97,7 +104,7 @@
 
     /* Services */
     #services {
-      background-color: #000000;
+      background-color: #f7f9fc; /* very light blue-gray */
       padding: 60px 20px;
     }
 
@@ -105,8 +112,7 @@
       font-size: 36px;
       text-align: center;
       margin-bottom: 40px;
-      color: #ffffffd7
-;
+      color: #1f2a44;
     }
 
     .service-grid {
@@ -116,73 +122,99 @@
     }
 
     .service-card {
-      background-color: #2a2a2a;
+      background-color: #ffffff;
       padding: 40px;
       border-radius: 20px;
       transition: 0.3s;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
     .service-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 20px rgba(191, 123, 43, 0.3);
     }
 
     .service-card h3 {
-      color: #ffdb0f;
+      color: #bf7b2b;
       margin-bottom: 10px;
     }
 
     .service-card p {
-      color: #ccc;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.5;
     }
 
     /* Process Section */
     #process {
-      background: #141414;
+      background: #d6dce6; /* soft gray-blue */
       padding: 60px 20px;
       text-align: center;
+      color: #222;
+      border-radius: 15px;
+      max-width: 1000px;
+      margin: 40px auto;
+      box-shadow: 0 6px 20px rgba(31, 42, 68, 0.1);
     }
 
     #process h2 {
-      text-align: center;
       font-size: 36px;
       margin-bottom: 10px;
+      color: #1f2a44;
     }
 
     #process .subtitle {
-      text-align: center;
-      color: #aaa;
+      font-size: 20px;
       margin-bottom: 40px;
+      color: #444;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
     }
 
     .process-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 30px;
     }
 
     .step {
-      background: #222;
-      border: 1px solid #333;
-      padding:30px;
+      background: #ffffff;
+      border: 1px solid #cfd6e2;
+      padding: 30px;
       border-radius: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .step:hover {
+      box-shadow: 0 8px 25px rgba(191, 123, 43, 0.25);
     }
 
     .step h3 {
-      color: #ffdb0f;
+      color: #bf7b2b;
       margin-bottom: 10px;
+      font-size: 25px;
     }
 
     .step p {
-      color: #ccc;
+      color: #555;
+      font-size: 18px;
+      line-height: 1.5;
     }
 
     /* Call to Action */
     #cta {
-      background-color: #000000;
+      background-color: #1f2a44; /* dark navy */
       padding: 80px 20px;
       text-align: center;
+      color: white;
+      border-radius: 15px;
+      max-width: 900px;
+      margin: 60px auto;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
 
     #cta h2 {
@@ -193,6 +225,8 @@
     #cta p {
       font-size: 18px;
       margin-bottom: 30px;
+      color: #dfd9b8;
+      line-height: 1.5;
     }
 
     .cta-button {
@@ -202,13 +236,19 @@
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
+      box-shadow: 0 5px 10px rgba(191, 123, 43, 0.7);
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #a46820;
     }
 
     /* Footer */
     footer {
-      background-color: #111;
+      background-color: #031234; /* dark slate blue */
       padding: 60px 20px;
-      color: #999;
+      color: #bbb;
     }
 
     .footer-container {
@@ -219,31 +259,33 @@
       margin: auto;
     }
 
-    .footer-col h3,
-    .footer-col h4 {
+    .footer-column h3,
+    .footer-column h4 {
       color: #fff;
       margin-bottom: 15px;
     }
 
-    .footer-col p,
-    .footer-col a {
+    .footer-column p,
+    .footer-column a {
       font-size: 15px;
-      color: #aaa;
+      color: #ccc;
       text-decoration: none;
+      line-height: 1.4;
     }
 
-    .footer-col a:hover {
-      color: #fff;
+    .footer-column a:hover {
+      color: #bf7b2b;
     }
 
     .social-icons a {
       color: #ccc;
       margin-right: 10px;
       font-size: 20px;
+      transition: color 0.3s ease;
     }
 
     .social-icons a:hover {
-      color: white;
+      color: #bf7b2b;
     }
 
     .footer-bottom {
@@ -252,53 +294,54 @@
       border-top: 1px solid #444;
       padding-top: 20px;
       font-size: 14px;
+      color: #aaa;
     }
 
     /* Hamburger Icon (Hidden by default) */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
 
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  border-radius: 3px;
-}
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      border-radius: 3px;
+    }
 
-/* Mobile Nav - Hidden by default */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
+    /* Mobile Nav - Hidden by default */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
 
-  nav {
-    width: 100%;
-  }
+      nav {
+        width: 100%;
+      }
 
-  #nav-menu {
-    display: none;
-    width: 100%;
-  }
+      #nav-menu {
+        display: none;
+        width: 100%;
+        background-color: #1f2a44;
+      }
 
-  #nav-menu.open {
-    display: block;
-  }
+      #nav-menu.open {
+        display: block;
+      }
 
-  nav ul {
-    flex-direction: column;
-    gap: 0;
-  }
+      nav ul {
+        flex-direction: column;
+        gap: 0;
+      }
 
-  nav ul li a {
-    padding: 12px 20px;
-    border-bottom: 1px solid #333;
-  }
-}
-
+      nav ul li a {
+        padding: 12px 20px;
+        border-bottom: 1px solid #3a4e7a;
+      }
+    }
   </style>
 </head>
 <body>
@@ -306,7 +349,7 @@
   <header>
     <div class="logo">Samrades</div>
   
-    <div class="hamburger" id="hamburger">
+    <div class="hamburger" id="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
       <span></span>
       <span></span>
       <span></span>
@@ -314,10 +357,10 @@
   
     <nav id="nav-menu">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="experience.html">Experiences</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -327,22 +370,15 @@
   <section id="about">
     <h2>About Us</h2>
     <p>
-      At <strong>Samrades</strong>, we are a Thanjavur-based IT company dedicated to empowering businesses through
-      innovative digital solutions. Our core services include <strong>website development</strong>,
-      <strong>custom software development</strong>, <strong>secure hosting solutions</strong>,
-      <strong>IT infrastructure services</strong>, and expert <strong>IT consulting</strong> tailored to your business
-      needs. With a strong focus on quality, scalability, and user experience, we deliver technology that drives
-      growth and builds digital resilience.
+      We are dedicated to empowering your business through innovative digital solutions that drive real results. Our core services include website development, custom software development, secure hosting solutions, comprehensive IT services, and expert IT consulting, all tailored to meet your unique business needs.
+
+      With a strong focus on quality, scalability, and exceptional user experience, we deliver cutting-edge technologies that not only solve current challenges but also future-proof your operations. Whether you're looking to build your online presence, streamline internal processes, or scale your infrastructure, our team of experienced professionals is here to guide you every step of the way.
+      
+      We combine creativity with technical excellence to help you transform ideas into impactful digital products—ensuring your business stays ahead in today’s fast-paced digital world.
     </p>
-    <p>
-      Founded by a passionate technology enthusiast with a vision to bridge the gap between local businesses and
-      cutting-edge IT solutions, <strong>Samrades</strong> combines technical expertise with personalized service.
-      Our team is committed to delivering reliable, future-ready solutions that help our clients stay ahead in a
-      rapidly evolving digital world.
-    </p>
-    <a href="about.html" class="know-more-button">Know More</a>
+    <a href="about.html" class="know-more-button">Click To Know More</a>
   </section>
-<br>
+
   <section id="services">
     <h2>Our Services</h2>
     <div class="service-grid">
@@ -360,86 +396,112 @@
       </div>
       <div class="service-card">
         <h3>IT Consulting</h3>
-        <p>Comprehensive IT solutions including infrastructure setup, maintenance, and ongoing support.</p>
+        <p>Comprehensive IT solutions including infrastructure setup, maintenance, and immediate support.</p>
       </div>
-      
     </div>
     <div style="text-align: center; margin-top: 30px;">
       <a href="services.html" class="know-more-button">Know More</a>
     </div>
   </section>
-<br>
+
   <section id="process">
     <h2>From Your Idea to Reality</h2>
-    <p class="subtitle">We turn your vision into powerful digital solutions through a step-by-step process.</p>
+    <p class="subtitle">We turn your vision into powerful digital solutions through a clear, strategic, and collaborative step-by-step process from concept to deployment. We work closely with you to understand your goals, design intuitive experiences, and build scalable solutions.</p>
     <div class="process-grid">
       <div class="step">
-        <h3>Idea</h3>
-        <p>You bring the vision — we listen, understand, and refine it into a clear concept.</p>
+        <h3>Your Business Idea</h3>
+        <p>Bring us your idea. We will understand your requirements and transform it as a software solution for your business.</p>
       </div>
       <div class="step">
-        <h3>Planning & Design</h3>
-        <p>We ensure efficiency and clarity of your project and Our experts will designs the interfaces that reflect your brand.</p>
+        <h3>Us - Samrades</h3>
+        <p>We will work on your Business Idea to transform it into Websites and Applications.</p>
       </div>
       <div class="step">
-        <h3>Development</h3>
-        <p>Using modern languages and frameworks, we build fast and scalable applications.</p>
-      </div>
-      <div class="step">
-        <h3>Testing</h3>
-        <p>We test thoroughly for bugs, performance, and usability across all devices.</p>
-      </div>
-      <div class="step">
-        <h3>Deployment</h3>
-        <p>Your product goes live — fully hosted, secure, and ready to grow with you.</p>
+        <h3>Digital Transformations</h3>
+        <p>We will complete your business website and make it live on the internet for the world to see your idea.</p>
       </div>
     </div>
   </section>
-<br>
+
   <section id="cta">
     <h2>Ready to Transform Your Idea into Digital Reality?</h2>
-    <p>Whether you’re starting from scratch or looking to grow your business, We're here to help you. Let’s build something great together.</p>
+    <p>Whether you’re starting from scratch or looking to grow your business, we're here to help you. Let’s build something great together.</p>
     <a href="contact.html" class="cta-button">Reach Us</a>
   </section>
-<br>
+
   <footer>
     <div class="footer-container">
-      <div class="footer-col">
+      <div class="footer-column">
         <h3>Samrades</h3>
-        <p>A Thanjavur-based IT company turning your ideas into scalable digital solutions through websites, software, consulting, and more.</p>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-x-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
+        <p>
+          We are here to make your ideas into digital
+          solutions through websites, software, consulting, and more.
+        </p>
       </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <p><a href="#">Home</a></p>
-        <p><a href="#about">About</a></p>
-        <p><a href="#services">Services</a></p>
-        <p><a href="#cta">Contact</a></p>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul style="list-style:none; padding-left:0;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
-      <div class="footer-col">
-        <h4>Contact Us</h4>
+
+      <div class="footer-column">
+        <h3>Contact Us</h3>
         <p>No.123, Main Street, Thanjavur, Tamil Nadu</p>
         <p>+91 98765 43210</p>
-        <p>contact@samrades.com</p>
+        <p><a href="mailto:contact@samrades.com">samradesit@gmail.com</a></p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/yourusername" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/yourusername" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:youremail@example.com" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="tel:+1234567890" title="Phone">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <p>&copy; 2025 Samrades. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Samrades. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Font Awesome CDN for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Hamburger toggle menu for mobile
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
-  
+
     hamburger.addEventListener('click', () => {
       navMenu.classList.toggle('open');
     });
+
+    // Optional: support keyboard toggle (Enter or Space key)
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        navMenu.classList.toggle('open');
+      }
+    });
   </script>
-  
 </body>
 </html>
