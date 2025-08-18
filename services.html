@@ -4,292 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Samrades IT Company</title>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-
-  <style>
-    /* Global Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      font-family: 'Poppins', sans-serif;
-      background-color: rgb(255, 255, 255);
-      background-size: cover;
-      color: #fff;
-      scroll-behavior: smooth;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background-color: #031234;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      backdrop-filter: blur(5px);
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #fff;
-      letter-spacing: 1px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 30px;
-    }
-
-    nav ul li a {
-      font-weight: 500;
-      padding: 8px 18px;
-      border-radius: 25px;
-      transition: background-color 0.3s;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active {
-      background-color: #f2a154;
-      color: #000;
-    }
-
-    /* Mobile Nav */
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-
-      nav {
-        width: 100%;
-      }
-
-      #nav-menu {
-        display: none;
-        width: 100%;
-      }
-
-      #nav-menu.open {
-        display: block;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 0;
-      }
-
-      nav ul li a {
-        padding: 12px 20px;
-        border-bottom: 1px solid #333;
-      }
-    }
-
-    /* Section Styling */
-    section {
-      background-color: #ffffff;
-      padding: 70px 40px;
-      max-width: 1200px;
-      margin: 40px auto;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
-      color: #e0e7ff;
-    }
-
-    h2 {
-      font-size: 2.8rem;
-      margin-bottom: 40px;
-      text-align: center;
-      color: #031234;
-    }
-
-    .cta-text {
-      color: #031234;
-      font-size: 1.2rem;
-      text-align: center;
-      margin-top: -20px;
-      margin-bottom: 50px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      font-weight: 400;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      font-size: 20px;
-      padding: 70px;
-    }
-
-    .card {
-      background-color: rgb(150, 13, 13);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
-      padding: 20px;
-      backdrop-filter: blur(4px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      align-content: center;
-      text-align: center;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(255,255,255,0.15);
-    }
-
-    .card h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      text-align: center;
-      letter-spacing: 1px;
-      color: #031234;
-    }
-
-    .service-detail {
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 1.5px solid rgba(255, 255, 255, 0.15);
-      border-radius: 15px;
-      padding: 25px 30px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 15px rgba(3, 18, 52, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .service-detail:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(3, 18, 52, 0.7);
-    }
-
-    .service-detail img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 25px;
-      border: 1.5px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .service-detail h3 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      color: #031234;
-      text-align: center;
-      letter-spacing: 1.2px;
-    }
-
-    .service-detail p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #031234;
-      text-align: justify;
-      opacity: 0.95;
-    }
-
-    .hamburger {
-      display: none;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.7s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        gap: 15px;
-        background: rgba(0, 0, 0, 0.95);
-        position: absolute;
-        top: 65px;
-        right: 0;
-        width: 200px;
-        padding: 20px;
-        display: none;
-      }
-
-      nav ul.open {
-        display: flex;
-      }
-
-      .hamburger {
-        display: block;
-        cursor: pointer;
-        font-size: 1.6rem;
-        color: white;
-      }
-    }
-
-    /* Footer Styling */
-    .footer {
-      background-color: #031234;
-      color: #ffffff;
-      padding: 40px 0;
-      margin-top: 50px;
-      border-top: 2px solid #0b204e;
-    }
-
-    .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .footer-column {
-      flex: 1;
-      min-width: 250px;
-      padding: 0 15px;
-      margin-bottom: 30px;
-    }
-
-    .footer h3 {
-      color: #ffffff;
-      margin-bottom: 15px;
-    }
-
-    .footer a {
-      color: #ffffff;
-      transition: color 0.3s;
-    }
-
-    .footer a:hover {
-      color: #f2a154;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 15px;
-    }
-
-  </style>
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <script>
     // Scroll animation
     window.addEventListener('scroll', () => {
@@ -313,23 +31,21 @@
     });
   </script>
 </head>
-
-<body>
-
+<body>  
   <header>
     <div class="logo">Samrades</div>
-
-    <div class="hamburger" id="hamburger">
+  
+    <div class="hamburger" id="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
       <span></span>
       <span></span>
       <span></span>
     </div>
-
+  
     <nav id="nav-menu">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="experiences.html">Experiences</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -370,47 +86,65 @@
   </section>
 
  
-
-  <footer class="footer">
+  <footer>
     <div class="footer-container">
       <div class="footer-column">
         <h3>Samrades</h3>
-        <p>We transform your ideas into digital solutions through websites, software, consulting, and more.</p>
+        <p>
+          We transform your ideas into digital solutions through websites, software, consulting and More.
+        </p>
       </div>
+
       <div class="footer-column">
         <h3>Quick Links</h3>
-        <ul>
+        <ul style="list-style:none; padding-left:0;">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="experiences.html">Experiences</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+
       <div class="footer-column">
         <h3>Contact Us</h3>
-        <p>No.123, Main Street, Thanjavur, Tamil Nadu</p>
+        <p>No.123, Main Street, Thanjavur, Tamil Nadu, India</p>
         <p>+91 98765 43210</p>
-        <p><a href="mailto:samradesit@gmail.com">samradesit@gmail.com</a></p>
+        <p><a href="mailto:contact@samrades.com">samradesit@gmail.com</a></p>
       </div>
+
       <div class="footer-column">
         <h3>Follow Us</h3>
         <div class="social-icons">
-          <a href="https://www.instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="mailto:samradesit@gmail.com"><i class="fas fa-envelope"></i></a>
-          <a href="tel:+919876543210"><i class="fas fa-phone"></i></a>
+          <a href="https://www.instagram.com/yourusername" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/yourusername" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:youremail@example.com" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="tel:+1234567890" title="Phone">
+            <i class="fas fa-phone"></i>
+          </a>
         </div>
       </div>
     </div>
+
     <div class="footer-bottom">
       <p>&copy; <span id="year"></span> Samrades. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- Font Awesome CDN for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <script>
+    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // Hamburger toggle menu for mobile
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
 
@@ -418,15 +152,11 @@
       navMenu.classList.toggle('open');
     });
 
-    // Reveal on scroll
-    window.addEventListener('scroll', () => {
-      document.querySelectorAll('.reveal').forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        const height = window.innerHeight;
-        if (top < height - 100) {
-          el.classList.add('active');
-        }
-      });
+    // Optional: support keyboard toggle (Enter or Space key)
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        navMenu.classList.toggle('open');
+      }
     });
   </script>
 </body>
