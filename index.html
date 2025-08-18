@@ -14,14 +14,19 @@
     }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f2f4f8; /* light gray background for entire page */
+      background-image: url("2.");
       color: #222;
       line-height: 1.6;
+      background-image: url("2.png");
+      background-attachment: fixed;
+      background-size: cover;           /* Ensures the image covers the viewport */
+      background-position: center;      /* Centers the image */
+      background-repeat: no-repeat;     /* Prevents repetition */
     }
 
     /* Header */
     header {
-      background-color: #1f2a44; /* dark navy */
+      background-color: rgb(98, 0, 0); /* dark navy */
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
@@ -64,47 +69,49 @@
 
     /* About Section */
     #about {
-      background-color: #e3e8f0; /* light soft blue-gray */
       padding: 60px 20px;
-      text-align: center;
-      color: #222;
+      color: #550000;
+      font-weight: bold;
     }
 
     #about h2 {
       font-size: 36px;
       margin-bottom: 20px;
-      color: #1f2a44;
+      color: #550000;
+      text-align: center;
     }
 
     #about p {
       font-size: 22px;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto 20px;
-      color: #444;
+      color: #550000;
+      text-align: justify;
       line-height: 1.7;
     }
 
     /* Know More Button */
     .know-more-button {
-      display: inline-block;
-      background-color: #bf7b2b;
-      color: white;
+      background-color: #550000;
+      color: #ffffff;
       padding: 12px 28px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
       transition: background-color 0.3s ease;
       margin-top: 20px;
-      box-shadow: 0 4px 6px rgba(191, 123, 43, 0.4);
+      font-size: 18px;
     }
 
     .know-more-button:hover {
-      background-color: #a46820;
+      background-color: #b28e18;
+      color: #ffffff;
+      font-weight: bold;
+
     }
 
     /* Services */
     #services {
-      background-color: #f7f9fc; /* very light blue-gray */
       padding: 60px 20px;
     }
 
@@ -112,7 +119,7 @@
       font-size: 36px;
       text-align: center;
       margin-bottom: 40px;
-      color: #1f2a44;
+      color: #550000;
     }
 
     .service-grid {
@@ -122,7 +129,7 @@
     }
 
     .service-card {
-      background-color: #ffffff;
+      background-color: #550000;
       padding: 40px;
       border-radius: 20px;
       transition: 0.3s;
@@ -136,24 +143,24 @@
     }
 
     .service-card h3 {
-      color: #bf7b2b;
+      color: #ff8f0f;
       margin-bottom: 10px;
     }
 
     .service-card p {
-      color: #555;
-      font-size: 16px;
+      color: #ffffff;
+      font-weight: 800px;
+      font-size: 17px;
       line-height: 1.5;
     }
 
     /* Process Section */
     #process {
-      background: #d6dce6; /* soft gray-blue */
       padding: 60px 20px;
       text-align: center;
       color: #222;
       border-radius: 15px;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 40px auto;
       box-shadow: 0 6px 20px rgba(31, 42, 68, 0.1);
     }
@@ -161,32 +168,37 @@
     #process h2 {
       font-size: 36px;
       margin-bottom: 10px;
-      color: #1f2a44;
+      color: #550000;
     }
 
     #process .subtitle {
       font-size: 20px;
       margin-bottom: 40px;
-      color: #444;
-      max-width: 700px;
+      color: #4d0202;
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
       line-height: 1.5;
+      font-weight: 500;
     }
 
     .process-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 30px;
+      background-color: e48920;
+      font-weight: 500;
+
     }
 
     .step {
-      background: #ffffff;
-      border: 1px solid #cfd6e2;
+      background-color: #ffffff49;
+      border: 2px solid #550000;
       padding: 30px;
-      border-radius: 20px;
+      border-radius: 10px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
       transition: box-shadow 0.3s ease;
+
     }
 
     .step:hover {
@@ -194,25 +206,27 @@
     }
 
     .step h3 {
-      color: #bf7b2b;
+      color: #550000;
       margin-bottom: 10px;
-      font-size: 25px;
+      font-size:25px;
+      font-weight: bold;
     }
 
     .step p {
-      color: #555;
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1.5;
+      font-weight: 1000px;
+      color: #550000;
     }
 
     /* Call to Action */
     #cta {
-      background-color: #1f2a44; /* dark navy */
+      background-color: #550000; /* dark navy */
       padding: 80px 20px;
       text-align: center;
       color: white;
       border-radius: 15px;
-      max-width: 900px;
+      max-width: 1200px;
       margin: 60px auto;
       box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
@@ -223,32 +237,35 @@
     }
 
     #cta p {
-      font-size: 18px;
+      font-size: 20px;
       margin-bottom: 30px;
       color: #dfd9b8;
       line-height: 1.5;
+      font-weight: 400;
     }
 
     .cta-button {
-      background: #bf7b2b;
-      color: white;
+      background: #ffffff;
+      color: rgb(92, 13, 13);
       padding: 14px 30px;
-      border-radius: 30px;
+      border-radius: 50px;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 5px 10px rgba(191, 123, 43, 0.7);
       transition: background-color 0.3s ease;
     }
 
     .cta-button:hover {
-      background-color: #a46820;
+      background-color: #b28e18;
+      color: #ececec;
+      
     }
 
     /* Footer */
     footer {
-      background-color: #031234; /* dark slate blue */
+      background-color: #090909; /* dark slate blue */
       padding: 60px 20px;
-      color: #bbb;
+      color: #ebebeb;
+      text-align: center;
     }
 
     .footer-container {
@@ -257,35 +274,38 @@
       gap: 30px;
       max-width: 1200px;
       margin: auto;
+      text-align: center;
+
     }
 
     .footer-column h3,
     .footer-column h4 {
-      color: #fff;
+      color: #f4f4f4;
       margin-bottom: 15px;
     }
 
     .footer-column p,
     .footer-column a {
-      font-size: 15px;
-      color: #ccc;
+      font-size: 16px;
+      color: #f9f9f9;
       text-decoration: none;
       line-height: 1.4;
+      font-weight: 400;
     }
 
     .footer-column a:hover {
-      color: #bf7b2b;
+      color: #ededed;
     }
 
     .social-icons a {
-      color: #ccc;
+      color: #f2f2f2;
       margin-right: 10px;
       font-size: 20px;
       transition: color 0.3s ease;
     }
 
     .social-icons a:hover {
-      color: #bf7b2b;
+      color: #f1f1f1;
     }
 
     .footer-bottom {
@@ -294,7 +314,7 @@
       border-top: 1px solid #444;
       padding-top: 20px;
       font-size: 14px;
-      color: #aaa;
+      color: #f3f3f3;
     }
 
     /* Hamburger Icon (Hidden by default) */
@@ -376,7 +396,8 @@
       
       We combine creativity with technical excellence to help you transform ideas into impactful digital products—ensuring your business stays ahead in today’s fast-paced digital world.
     </p>
-    <a href="about.html" class="know-more-button">Click To Know More</a>
+    <center>
+    <a href="about.html" class="know-more-button">View More </a></center>
   </section>
 
   <section id="services">
@@ -400,7 +421,7 @@
       </div>
     </div>
     <div style="text-align: center; margin-top: 30px;">
-      <a href="services.html" class="know-more-button">Know More</a>
+      <a href="services.html" class="know-more-button">To Explore</a>
     </div>
   </section>
 
@@ -425,8 +446,8 @@
 
   <section id="cta">
     <h2>Ready to Transform Your Idea into Digital Reality?</h2>
-    <p>Whether you’re starting from scratch or looking to grow your business, we're here to help you. Let’s build something great together.</p>
-    <a href="contact.html" class="cta-button">Reach Us</a>
+    <p> Are you looking to grow your Business on digital. We are here and Let’s build something great together for you.</p>
+    <a href="contact.html" class="cta-button">Contact Us</a>
   </section>
 
   <footer>
@@ -434,8 +455,7 @@
       <div class="footer-column">
         <h3>Samrades</h3>
         <p>
-          We are here to make your ideas into digital
-          solutions through websites, software, consulting, and more.
+          We transform your ideas into digital solutions through websites, software, consulting and More.
         </p>
       </div>
 
@@ -452,7 +472,7 @@
 
       <div class="footer-column">
         <h3>Contact Us</h3>
-        <p>No.123, Main Street, Thanjavur, Tamil Nadu</p>
+        <p>No.123, Main Street, Thanjavur, Tamil Nadu, India</p>
         <p>+91 98765 43210</p>
         <p><a href="mailto:contact@samrades.com">samradesit@gmail.com</a></p>
       </div>
