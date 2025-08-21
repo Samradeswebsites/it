@@ -344,7 +344,11 @@ flex-direction: row;
 justify-content: space-between;
 align-items: center;
 }
-
+header img {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+}
 .logo {
 font-size: 24px;
 }
