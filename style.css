@@ -345,8 +345,8 @@ justify-content: space-between;
 align-items: center;
 }
 header img {
-  height: 20px;
-  width: 20px;
+  height: 40px;
+  width: 40px;
   object-fit: contain;
 }
 .logo {
@@ -560,16 +560,7 @@ h2 {
   font-size: 18px;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.7s ease;
-}
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 
 
@@ -1121,7 +1112,7 @@ footer {
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: #000;
+  background: #ebd700;
 }
 /* Default menu hidden on mobile */
 #nav-menu {
@@ -1131,7 +1122,7 @@ footer {
 /* When hamburger is clicked */
 #nav-menu.show {
   display: block;
-  background: #550000;
+  background: #ffffff;
   position: absolute;
   top: 60px;      /* below header */
   right: 10px;
