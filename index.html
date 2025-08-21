@@ -144,36 +144,15 @@
     </div>
   </footer>
 
-  <!-- Font Awesome CDN for icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-  <script>
-    // Set current year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Hamburger toggle menu for mobile
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
-
-    // Optional: support keyboard toggle (Enter or Space key)
-    hamburger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        navMenu.classList.toggle('open');
-      }
-    });
-  </script>
-
 <script>
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("nav-menu");
 
+  // Toggle class when hamburger is clicked
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("show");
   });
 </script>
+
 </body>
 </html>
