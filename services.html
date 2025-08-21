@@ -9,17 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <script>
-    // Scroll animation
-    window.addEventListener('scroll', () => {
-      document.querySelectorAll('.reveal').forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        const height = window.innerHeight;
-        if (top < height - 100) {
-          el.classList.add('active');
-        }
-      });
-    });
-
+  
     // Mobile nav toggle
     document.addEventListener('DOMContentLoaded', () => {
       const hamburger = document.getElementById('hamburger');
@@ -32,7 +22,9 @@
   </script>
 </head>
 <body>  
+  
   <header>
+    <img src="logo.png" alt="logo">
     <div class="logo">Samrades</div>
   
     <div class="hamburger" id="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
@@ -136,37 +128,14 @@
       <p>&copy; <span id="year"></span> Samrades. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- Font Awesome CDN for icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+  
   <script>
-    // Set current year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Hamburger toggle menu for mobile
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
-
-    // Optional: support keyboard toggle (Enter or Space key)
-    hamburger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        navMenu.classList.toggle('open');
-      }
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+  
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
     });
   </script>
-  
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const navMenu = document.getElementById("nav-menu");
-
-  hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("show");
-  });
-</script>
 </body>
 </html>
