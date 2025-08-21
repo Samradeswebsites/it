@@ -9,7 +9,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   color: #222;
   line-height: 1.6;
-  background-image: url("2.png");
+  background-color: #ffffff;
   background-attachment: fixed;
   background-size: cover;           
   background-position: center;      
@@ -26,11 +26,16 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  color: white;
+  color: rgb(255, 255, 255);
+}
+header img {
+  height: 70px;
+  width: 70px;
+  object-fit: contain;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
   color: #fff;
 }
@@ -43,19 +48,15 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 10px 20px;
   border-radius: 20px;
   transition: 0.3s;
   font-weight: 600;
 }
 
-nav ul li a:hover {
-  background-color: #3a4e7a;
-}
-
 nav ul li a.active {
-  color: #fff;
+  color: #cdd007;
 }
 
 /* About Section */
@@ -329,14 +330,14 @@ footer {
 
 /* Mobile Nav - Hidden by default */
 @media (max-width: 768px) {
-  body {
-    background-image: url("2.png");
-    background-image: url("2.png");
+  body {  
+    background-color: #ffffff;
   background-attachment: fixed;
   background-size: cover;           
   background-position: center;      
   background-repeat: no-repeat; 
   }
+  
 header {
 padding: 15px 20px;
 flex-direction: row;
@@ -345,7 +346,7 @@ align-items: center;
 }
 
 .logo {
-font-size: 20px;
+font-size: 24px;
 }
 
 .hamburger {
@@ -355,7 +356,7 @@ display: flex;
 #nav-menu {
 display: none;
 width: 100%;
-background-color: #373737;
+background-color: #4d4d4d;
 position: absolute;
 top: 70px;
 left: 0;
@@ -835,58 +836,6 @@ img {
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  font-family: 'Segoe UI', sans-serif;
-  color: #222;
-  line-height: 1.6;
-  background-image: url("2.png");
-  background-attachment: fixed;
-  background-size: cover;           
-  background-position: center;      
-  background-repeat: no-repeat;    
-}
-
-/* Header */
-header {
-  background-color:#550000;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  color: white;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  transition: 0.3s;
-  font-weight: 600;
-}
-
-nav ul li a:hover {
-  background-color: #3a4e7a;
-}
-
-nav ul li a.active {
-  color: #fff;
-}
 
 /* About Section */
 #about {
@@ -1178,7 +1127,7 @@ footer {
 /* When hamburger is clicked */
 #nav-menu.show {
   display: block;
-  background: #fff;
+  background: #550000;
   position: absolute;
   top: 60px;      /* below header */
   right: 10px;
@@ -1199,10 +1148,11 @@ footer {
 
 #nav-menu ul li a {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
+  background-color: #550000;
   font-size: 18px;
   display: block;
-  padding: 8px 12px;
+  padding: 4px 6px;
 }
 
 /* Hamburger styles */
@@ -1217,7 +1167,10 @@ footer {
 .hamburger span {
   width: 100%;
   height: 3px;
-  background: #000;
+  background: #550000;
+color: #ffffff;
+
+
 }
 
 /* On desktop */
@@ -1236,6 +1189,7 @@ footer {
     gap: 20px;
   }
   #nav-menu ul li {
+    font-size: 15px;
     margin: 0;
   }
 }
