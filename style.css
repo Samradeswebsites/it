@@ -120,7 +120,7 @@ nav ul li a.active {
 }
 
 .service-card {
-  background-color: #550000;
+  background-color: #777777;
   padding: 20px;
   border-radius: 20px;
   transition: 0.3s;
@@ -360,7 +360,7 @@ display: flex;
 #nav-menu {
 display: none;
 width: 100%;
-background-color: #4d4d4d;
+background-color: #ffffff;
 position: absolute;
 top: 70px;
 left: 0;
@@ -369,6 +369,8 @@ z-index: 999;
 
 #nav-menu.open {
 display: block;
+background-color: #ffffff;
+
 }
 
 nav ul {
@@ -888,7 +890,8 @@ img {
 
 .service-card h3 {
   color: #ffffff;
-  margin-bottom: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .service-card p {
@@ -1069,6 +1072,8 @@ footer {
 /* When hamburger clicked, show it */
 #nav-menu.show {
   display: block;
+  background-color: #ffffff;
+
 }
 
 /* Desktop menu (always visible on big screens) */
@@ -1103,7 +1108,7 @@ footer {
 /* When hamburger is clicked */
 #nav-menu.show {
   display: block;
-  background: #550000;
+  background: #ffffff;
   position: absolute;
   top: 60px;      /* below header */
   right: 10px;
@@ -1124,7 +1129,8 @@ footer {
 
 #nav-menu ul li a {
   text-decoration: none;
-  color: #ffffff;
+  color: #550000;
+  background-color: #ffffff;
   font-size: 18px;
   display: block;
   padding: 4px 6px;
